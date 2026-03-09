@@ -8,6 +8,7 @@ type CityData = {
   id: string;
   name: string;
   jpName: string;
+  region?: string;
 };
 
 type OverviewResponse = {
@@ -25,6 +26,7 @@ export default function GlobalCalendarPage() {
   const [selectedCalendarDate, setSelectedCalendarDate] = useState<Date | null>(null);
   const [bloomingCitiesOnDate, setBloomingCitiesOnDate] = useState<any[]>([]);
   const [loadingBlooming, setLoadingBlooming] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState<string>("All");
 
   const [activeMonthTab, setActiveMonthTab] = useState<number>(3); // 2=March, 3=April, 4=May
 
@@ -45,6 +47,7 @@ export default function GlobalCalendarPage() {
         .then(res => res.json())
         .then(data => {
           setBloomingCitiesOnDate(data.cities || []);
+          setSelectedRegion("All");
           setLoadingBlooming(false);
         })
         .catch(err => {
@@ -179,9 +182,42 @@ export default function GlobalCalendarPage() {
                   </span>
                 </h3>
                 <div className="text-sm font-medium text-slate-500 bg-slate-50 px-3 py-1 rounded-lg border border-slate-100">
-                  {loadingBlooming ? t('searching') : `${bloomingCitiesOnDate.length} ${t('citiesFound')}`}
+                  {loadingBlooming ? t('searching') : (
+                    Array.from(new Set(bloomingCitiesOnDate.map(c => c.region))).length > 0 
+                      ? `${bloomingCitiesOnDate.filter(c => selectedRegion === "All" || c.region === selectedRegion).length}/${bloomingCitiesOnDate.length} ${t('citiesFound')}`
+                      : `${bloomingCitiesOnDate.length} ${t('citiesFound')}`
+                  )}
                 </div>
               </div>
+
+              {/* Region Filter */}
+              {!loadingBlooming && bloomingCitiesOnDate.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <button
+                    onClick={() => setSelectedRegion("All")}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                      selectedRegion === "All"
+                        ? 'bg-pink-500 border-pink-500 text-white shadow-sm'
+                        : 'bg-white border-slate-200 text-slate-600 hover:bg-pink-50 hover:border-pink-200'
+                    }`}
+                  >
+                    {t('allRegions') || 'All Regions'}
+                  </button>
+                  {Array.from(new Set(bloomingCitiesOnDate.map(c => c.region))).filter(Boolean).map((region: any) => (
+                    <button
+                      key={region}
+                      onClick={() => setSelectedRegion(region)}
+                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                        selectedRegion === region
+                          ? 'bg-pink-500 border-pink-500 text-white shadow-sm'
+                          : 'bg-white border-slate-200 text-slate-600 hover:bg-pink-50 hover:border-pink-200'
+                      }`}
+                    >
+                      {region}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {loadingBlooming ? (
                 <div className="flex justify-center py-12">
@@ -193,7 +229,9 @@ export default function GlobalCalendarPage() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-4">
-                  {bloomingCitiesOnDate.map((city: any) => (
+                  {bloomingCitiesOnDate
+                    .filter(city => selectedRegion === "All" || city.region === selectedRegion)
+                    .map((city: any) => (
                     <div key={city.id} className="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:border-pink-200 transition-colors shadow-sm">
                       <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-3">
                         <span className="font-semibold text-slate-900 text-lg">

@@ -42,7 +42,8 @@ export async function GET(request: Request) {
         return {
           id: c.id,
           name: c.name,
-          jpName: c.jpName
+          jpName: c.jpName,
+          region: c.region
         };
       });
 
@@ -105,6 +106,7 @@ export async function GET(request: Request) {
             id: c.id,
             name: c.name,
             jpName: c.jpName,
+            region: c.region,
             activeForecasts
           });
         }
