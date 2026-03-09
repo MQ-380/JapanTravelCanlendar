@@ -1,20 +1,51 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🌸 Sakura Forecast Aggregator (2026)
 
-# Run and deploy your AI Studio app
+A modern, interactive web application that aggregates cherry blossom (Sakura) blooming forecasts from major Japanese meteorological agencies.
 
-This contains everything you need to run your app locally.
+## ✨ Features
 
-View your app in AI Studio: https://ai.studio/apps/f0ac81c7-a0c1-427e-ad70-57a529ace75b
+- **Interactive Global Calendar**: View blooming and full-bloom predictions across all of Japan at a glance.
+- **Smart City Search**: Search and select specific cities to view deep-dive forecast details.
+- **Multi-Provider Data**: Aggregated data from **Weather Map**, **Weathernews**, and **Japan Meteorological Corp**.
+- **Internationalization (i18n)**: Fully supports **English**, **Japanese (日本語)**, and **Chinese (简体中文)**.
+- **Mobile Optimized**: Responsive design with specialized calendar views for mobile devices.
+- **Real-time Accuracy**: Displays individual update timestamps for each forecasting data source.
 
-## Run Locally
+## 🛠️ Technology Stack
 
-**Prerequisites:**  Node.js
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Language Management**: React Context based i18n
 
+## 🚀 Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MQ-380/JapanTravelCanlendar.git
+   cd JapanTravelCanlendar
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📄 License & Disclaimer
+
+This project is a non-commercial educational aggregator. All forecast data belongs to their respective organizations. Users are advised to verify with official sources (Weather Map, Weathernews, JMC) before making travel plans.
