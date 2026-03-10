@@ -3,6 +3,7 @@ import './globals.css'; // Global styles
 import { LanguageProvider } from './i18n/context';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Sakura Forecast Aggregator',
@@ -18,6 +19,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <div className="flex-1">
             {children}
           </div>
+          <Analytics />
           <Footer />
         </LanguageProvider>
       </body>
