@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { useLanguage } from './i18n/context';
+import { useLanguage } from '../i18n/context';
 
 type CityData = {
   id: string;

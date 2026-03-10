@@ -11,8 +11,19 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+export function LanguageProvider({ 
+  children, 
+  initialLanguage = 'en' 
+}: { 
+  children: ReactNode;
+  initialLanguage?: Language;
+}) {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
+
+  // Sync state if initialLanguage changes (e.g. on navigation)
+  React.useEffect(() => {
+    setLanguage(initialLanguage);
+  }, [initialLanguage]);
 
   const t = (key: keyof typeof translations.en) => {
     return translations[language][key] || translations.en[key];

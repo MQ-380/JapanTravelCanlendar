@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { MapPin, Calendar, Map, Search } from 'lucide-react';
-import { useLanguage } from '../i18n/context';
+import { useLanguage } from '../../i18n/context';
 
 type SakuraData = {
   flowering: string;
