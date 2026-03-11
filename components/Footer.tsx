@@ -15,6 +15,8 @@ export default function Footer() {
           <a href="https://weathernews.jp/sakura/news/kaikaforecast/" target="_blank" rel="noopener noreferrer" className="hover:underline">Weathernews</a>
           <span className="text-slate-300">|</span>
           <a href="https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw" target="_blank" rel="noopener noreferrer" className="hover:underline">Japan Meteorological Corp</a>
+          <span className="text-slate-300">|</span>
+          <a href="https://tenki.jp/sakura/expectation/" target="_blank" rel="noopener noreferrer" className="hover:underline">tenki.jp</a>
         </div>
         <p className="text-xs text-slate-400 mt-4 leading-relaxed max-w-2xl mx-auto">
           {t('footerWarning')}

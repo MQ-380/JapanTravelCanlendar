@@ -104,6 +104,7 @@ export default function CitySearch() {
     weathermap: getSourceData("Weather Map"),
     weathernews: getSourceData("Weathernews"),
     jmc: getSourceData("Japan Meteorological Corp"),
+    tenki: getSourceData("tenki.jp"),
   };
 
   const parseDateStr = (dateStr?: string) => {
@@ -128,6 +129,7 @@ export default function CitySearch() {
     weathermap: getViewingPeriod(cityData.weathermap),
     weathernews: getViewingPeriod(cityData.weathernews),
     jmc: getViewingPeriod(cityData.jmc),
+    tenki: getViewingPeriod(cityData.tenki),
   };
 
   const isDateInPeriod = (date: Date, period: { start: Date, end: Date } | null) => {
@@ -163,7 +165,8 @@ export default function CitySearch() {
             const inWm = isDateInPeriod(currentDate, periods.weathermap);
             const inWn = isDateInPeriod(currentDate, periods.weathernews);
             const inJmc = isDateInPeriod(currentDate, periods.jmc);
-            const hasAny = inWm || inWn || inJmc;
+            const inTenki = isDateInPeriod(currentDate, periods.tenki);
+            const hasAny = inWm || inWn || inJmc || inTenki;
 
             return (
               <div key={day} className="h-10 flex flex-col items-center justify-start relative group">
@@ -174,6 +177,7 @@ export default function CitySearch() {
                   {inWm && <div className="h-1 w-full bg-[#4A90E2] rounded-full"></div>}
                   {inWn && <div className="h-1 w-full bg-[#F5A623] rounded-full"></div>}
                   {inJmc && <div className="h-1 w-full bg-[#2ECC71] rounded-full"></div>}
+                  {inTenki && <div className="h-1 w-full bg-[#9B59B6] rounded-full"></div>}
                 </div>
               </div>
             );
@@ -267,11 +271,11 @@ export default function CitySearch() {
           </div>
           
           {/* Forecast Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {/* Weather Map */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="font-semibold text-slate-800 text-lg">Weather Map</h3>
+              <div className="flex justify-between items-start min-h-[56px] mb-4">
+                <h3 className="font-semibold text-slate-800 text-lg leading-tight">Weather Map</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
                 <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
@@ -299,8 +303,8 @@ export default function CitySearch() {
 
             {/* Weathernews */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="font-semibold text-slate-800 text-lg">Weathernews</h3>
+              <div className="flex justify-between items-start min-h-[56px] mb-4">
+                <h3 className="font-semibold text-slate-800 text-lg leading-tight">Weathernews</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
                 <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
@@ -328,7 +332,7 @@ export default function CitySearch() {
 
             {/* Japan Meteorological Corp */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-start min-h-[56px] mb-4">
                 <h3 className="font-semibold text-slate-800 text-lg leading-tight">Japan Meteorological<br/>Corp</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
@@ -350,6 +354,35 @@ export default function CitySearch() {
                   </div>
                   <div className="text-3xl font-bold text-slate-800">
                     {!selectedCityData ? '...' : cityData.jmc?.fullBloom || '-'}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* tenki.jp */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+              <div className="flex justify-between items-start min-h-[56px] mb-4">
+                <h3 className="font-semibold text-slate-800 text-lg leading-tight">tenki.jp</h3>
+              </div>
+              <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
+                <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
+                <span>{selectedCityData?.lastUpdated?.['tenki.jp'] || '-'}</span>
+              </div>
+              <div className="space-y-4">
+                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                  <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
+                    <span>🌸</span> {t('flowering')} {t('floweringSub')}
+                  </div>
+                  <div className="text-3xl font-bold text-slate-800">
+                    {!selectedCityData ? '...' : cityData.tenki?.flowering || '-'}
+                  </div>
+                </div>
+                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                  <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
+                    <span className="text-pink-400">💮</span> {t('fullBloom')} {t('fullBloomSub')}
+                  </div>
+                  <div className="text-3xl font-bold text-slate-800">
+                    {!selectedCityData ? '...' : cityData.tenki?.fullBloom || '-'}
                   </div>
                 </div>
               </div>
@@ -398,6 +431,10 @@ export default function CitySearch() {
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-[#2ECC71]"></div>
                 <span className="text-sm font-medium text-slate-700">Japan Meteorological Corp</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded-full bg-[#9B59B6]"></div>
+                <span className="text-sm font-medium text-slate-700">tenki.jp</span>
               </div>
             </div>
 

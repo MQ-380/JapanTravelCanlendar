@@ -140,6 +140,9 @@ export default function GlobalCalendarPage() {
                 <span className="flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-[#2ECC71]"></span> JMC: {overview.lastUpdated.japanMeteorologicalCorp || '-'}
                 </span>
+                <span className="flex items-center gap-1">
+                  <span className="w-2 h-2 rounded-full bg-[#9B59B6]"></span> tenki: {overview.lastUpdated['tenki.jp'] || '-'}
+                </span>
               </div>
             )}
           </div>
@@ -240,16 +243,38 @@ export default function GlobalCalendarPage() {
                         {/* Display full bloom count as a subtle indicator if needed */}
                       </div>
                       <div className="flex flex-col gap-2">
-                        {city.activeForecasts.map((f: any) => (
-                          <div key={f.source} className="flex items-center justify-between text-sm">
-                            <span className="text-slate-500 font-medium w-6/12 truncate">{f.source}</span>
-                            <span className={`px-2 py-0.5 rounded text-xs font-semibold w-5/12 text-center
-                              ${f.stage === 'Full Bloom' ? 'bg-pink-100 text-pink-700' : 'bg-blue-50 text-blue-600'}
-                            `}>
-                              {f.stage === 'Full Bloom' ? t('fullBloom') : t('flowering')}
-                            </span>
-                          </div>
-                        ))}
+                        {city.activeForecasts.map((f: any) => {
+                          let badgeClass = 'bg-slate-100 text-slate-500';
+                          let labelText = '';
+
+                          switch (f.stage) {
+                            case 'Full Bloom':
+                              badgeClass = 'bg-pink-100 text-pink-700';
+                              labelText = t('fullBloom');
+                              break;
+                            case 'Flowering':
+                              badgeClass = 'bg-blue-50 text-blue-600';
+                              labelText = t('flowering');
+                              break;
+                            case 'Not Yet Flowered':
+                              badgeClass = 'bg-slate-100 text-slate-500';
+                              labelText = t('notYetFlowered');
+                              break;
+                            case 'Fallen':
+                              badgeClass = 'bg-slate-200 text-slate-600';
+                              labelText = t('fallen');
+                              break;
+                          }
+
+                          return (
+                            <div key={f.source} className="flex items-center justify-between text-sm">
+                              <span className="text-slate-500 font-medium w-6/12 truncate">{f.source}</span>
+                              <span className={`px-2 py-0.5 rounded text-xs font-semibold w-5/12 text-center ${badgeClass}`}>
+                                {labelText}
+                              </span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   ))}

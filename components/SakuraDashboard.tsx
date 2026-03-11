@@ -11,14 +11,16 @@ const sakuraData: any = {
   sourceUpdates: {
     "Weather Map": "2026-03-05",
     "Weathernews": "2026-03-05",
-    "Japan Meteorological Corp": "2026-03-05"
+    "Japan Meteorological Corp": "2026-03-05",
+    "tenki.jp": "2026-03-11"
   }
 };
 
 const SOURCE_COLORS: Record<string, string> = {
   'Weather Map': 'bg-blue-400',
   'Weathernews': 'bg-amber-400',
-  'Japan Meteorological Corp': 'bg-emerald-400'
+  'Japan Meteorological Corp': 'bg-emerald-400',
+  'tenki.jp': 'bg-purple-400'
 };
 
 function parseDateStr(str: string, year = 2026): Date | null {
@@ -251,7 +253,7 @@ export default function SakuraDashboard() {
                       className="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden hover:shadow-md transition-shadow group flex flex-col relative"
                     >
                       <div className="p-6 flex-1 flex flex-col">
-                        <div className="flex items-start justify-between mb-6">
+                        <div className="flex items-start justify-between min-h-[56px] mb-4">
                           <div>
                             <h3 className="text-lg font-medium text-slate-900 leading-tight">
                               {forecast.source}

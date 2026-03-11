@@ -89,19 +89,29 @@ export async function GET(request: Request) {
               ? new Date(fullBloom.getTime() + 5 * 24 * 60 * 60 * 1000).getTime()
               : new Date(start.getTime() + 10 * 24 * 60 * 60 * 1000).getTime();
 
-            if (targetDate >= startTime && targetDate <= endTime) {
-              const stage = (fullBloomTime && targetDate >= fullBloomTime) ? 'Full Bloom' : 'Flowering';
-              activeForecasts.push({
-                source: f.source,
-                stage,
-                floweringDate: f.current.floweringDate,
-                fullBloomDate: f.current.fullBloomDate
-              });
+            let stage = 'Not Yet Flowered';
+            if (targetDate < startTime) {
+              stage = 'Not Yet Flowered';
+            } else if (targetDate > endTime) {
+              stage = 'Fallen';
+            } else if (fullBloomTime && targetDate >= fullBloomTime) {
+              stage = 'Full Bloom';
+            } else {
+              stage = 'Flowering';
             }
+
+            activeForecasts.push({
+              source: f.source,
+              stage,
+              floweringDate: f.current.floweringDate,
+              fullBloomDate: f.current.fullBloomDate
+            });
           }
         });
 
-        if (activeForecasts.length > 0) {
+        const hasActiveForecast = activeForecasts.some(f => f.stage === 'Flowering' || f.stage === 'Full Bloom');
+
+        if (hasActiveForecast) {
           activeCities.push({
             id: c.id,
             name: c.name,
