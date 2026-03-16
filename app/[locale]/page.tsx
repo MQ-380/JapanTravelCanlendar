@@ -42,7 +42,10 @@ export default function GlobalCalendarPage() {
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
   const [liveRows, setLiveRows] = useState<LiveRow[]>([]);
 
-  const [activeMonthTab, setActiveMonthTab] = useState<number>(3); // 2=March, 3=April, 4=May
+  const [activeMonthTab, setActiveMonthTab] = useState<number>(() => {
+    const m = new Date().getMonth(); // 0-indexed
+    return m >= 2 && m <= 4 ? m : 2; // clamp to Mar–May, default March
+  });
 
   useEffect(() => {
     fetch('/api/sakura?type=overview')

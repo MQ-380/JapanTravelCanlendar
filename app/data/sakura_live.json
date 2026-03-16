@@ -2,27 +2,27 @@
   "lastUpdated": "2026-03-16",
   "cities": [
     {
-      "id": "gifu",
-      "name": "Gifu",
-      "jpName": "岐阜",
-      "region": "北陸・東海",
+      "id": "kochi",
+      "name": "Kochi",
+      "jpName": "高知",
+      "region": "未知",
       "lives": [
         {
           "source": "気象庁",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
             "floweringDate": "3/16",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-7"
+            "comparedWithLastYear": "-7",
+            "comparedWithAllYears": "-6"
           }
         }
       ]
     },
     {
-      "id": "kochi",
-      "name": "Kochi",
-      "jpName": "高知",
-      "region": "中国・四国",
+      "id": "gifu",
+      "name": "Gifu",
+      "jpName": "岐阜",
+      "region": "未知",
       "lives": [
         {
           "source": "気象庁",
@@ -30,6 +30,23 @@
           "current": {
             "floweringDate": "3/16",
             "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "甲府",
+      "name": "甲府",
+      "jpName": "甲府",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/16",
+            "comparedWithLastYear": "-10",
             "comparedWithAllYears": "-9"
           }
         }
