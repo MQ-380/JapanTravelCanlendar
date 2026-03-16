@@ -62,9 +62,35 @@ export async function GET(request: Request) {
       const cityData = data.cities.find((c: any) => c.id === cityId);
       if (!cityData) return NextResponse.json({ error: 'City not found' }, { status: 404 });
 
+      // Also fetch live data for this city from sakura_live.json
+      let liveData = null;
+      try {
+        const liveFilePath = path.join(process.cwd(), 'app', 'data', 'sakura_live.json');
+        const liveContents = fs.readFileSync(liveFilePath, 'utf8');
+        const liveJson = JSON.parse(liveContents);
+        const liveCity = liveJson.cities.find((c: any) => c.id === cityId);
+        if (liveCity) {
+          // Flatten live entries
+          const entries = liveCity.lives.map((live: any) => ({
+            source: live.source,
+            url: live.url,
+            flowering: live.current?.floweringDate ?? null,
+            floweringVsAllYears: live.current?.comparedWithAllYears ?? null,
+            floweringVsLastYear: live.current?.comparedWithLastYear ?? null,
+            fullBloom: live.current?.fullBloomDate ?? null,
+            fullBloomVsAllYears: live.current?.fullBloomComparedWithAllYears ?? null,
+            fullBloomVsLastYear: live.current?.fullBloomComparedWithLastYear ?? null,
+          }));
+          liveData = { lastUpdated: liveJson.lastUpdated, entries };
+        }
+      } catch {
+        // live data is optional; silently ignore
+      }
+
       return NextResponse.json({
         ...cityData,
-        lastUpdated: data.lastUpdated 
+        lastUpdated: data.lastUpdated,
+        liveData,
       });
     }
 

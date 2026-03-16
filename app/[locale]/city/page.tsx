@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { MapPin, Calendar, Map, Search } from 'lucide-react';
+import { MapPin, Calendar, Map, Search, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../../i18n/context';
 
 type SakuraData = {
@@ -18,12 +18,36 @@ type Forecast = {
   };
 };
 
+type LiveEntry = {
+  source: string;
+  url: string;
+  flowering: string | null;
+  floweringVsAllYears: string | null;
+  floweringVsLastYear: string | null;
+  fullBloom: string | null;
+  fullBloomVsAllYears: string | null;
+  fullBloomVsLastYear: string | null;
+};
+
+type LiveCity = {
+  id: string;
+  name: string;
+  jpName: string;
+  region: string;
+  source: string;
+  url: string;
+  date: string | null;
+  comparedWithAllYears: string | null;
+  comparedWithLastYear: string | null;
+};
+
 type CityData = {
   id: string;
   name: string;
   jpName: string;
   forecasts?: Forecast[];
   lastUpdated?: Record<string, string>;
+  liveData?: { lastUpdated: string; entries: LiveEntry[] } | null;
 };
 
 type OverviewResponse = {
@@ -34,6 +58,30 @@ type OverviewResponse = {
 };
 
 const POPULAR_CITY_IDS = ["sapporo", "tokyo", "kanazawa", "kyoto", "osaka", "fukuoka"];
+
+function DiffBadge({ value, unit, earlierLabel, laterLabel }: {
+  value: string | null;
+  unit: string;
+  earlierLabel: string;
+  laterLabel: string;
+}) {
+  if (!value) return <span className="text-slate-300 text-xs">—</span>;
+  const num = parseInt(value, 10);
+  if (isNaN(num)) return <span className="text-slate-300 text-xs">—</span>;
+  const abs = Math.abs(num);
+  const isEarly = num < 0;
+  const isLate = num > 0;
+  const cls = isEarly
+    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+    : isLate
+    ? 'bg-red-50 text-red-700 border-red-200'
+    : 'bg-slate-50 text-slate-500 border-slate-200';
+  return (
+    <span className={`inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-xs font-semibold border ${cls}`}>
+      {isEarly ? '▲' : isLate ? '▼' : ''}{abs}{unit} {isEarly ? earlierLabel : isLate ? laterLabel : '±0'}
+    </span>
+  );
+}
 
 const RECOMMENDED_SPOTS: Record<string, { en: string, jp: string }[]> = {
   kyoto: [
@@ -66,6 +114,7 @@ export default function CitySearch() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [liveReport, setLiveReport] = useState<{ flowering: LiveCity[]; fullBloom: LiveCity[] } | null>(null);
 
   useEffect(() => {
     fetch('/api/sakura?type=overview')
@@ -88,6 +137,13 @@ export default function CitySearch() {
         .catch(console.error);
     }
   }, [selectedCityId]);
+
+  useEffect(() => {
+    fetch('/api/sakura-live')
+      .then(res => res.json())
+      .then(data => setLiveReport(data))
+      .catch(console.error);
+  }, []);
 
   const availableCities = overview?.cities || [];
   const filteredCities = availableCities.filter(c => 
@@ -259,17 +315,222 @@ export default function CitySearch() {
       </div>
 
       {!selectedCityId ? (
-        <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100 italic text-slate-500">
-          {t('pleaseSearch')}
+        <div className="animate-in fade-in duration-500">
+          {/* Live Announcement Cards */}
+          {(() => {
+            const flowering = liveReport?.flowering ?? [];
+            const fullBloom = liveReport?.fullBloom ?? [];
+            const hasAny = flowering.length > 0 || fullBloom.length > 0;
+
+            if (!hasAny) {
+              return (
+                <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100 text-slate-500">
+                  {liveReport ? t('liveDefaultEmpty') : t('pleaseSearch')}
+                </div>
+              );
+            }
+
+            return (
+              <div className="space-y-8">
+                {/* Section header */}
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <h2 className="text-lg font-bold text-emerald-800">{t('liveDefaultTitle')}</h2>
+                </div>
+
+                {/* Flowering Cards */}
+                {flowering.length > 0 && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xl">🌸</span>
+                      <h3 className="text-base font-semibold text-slate-700">{t('liveDefaultFlowering')}</h3>
+                      <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{flowering.length}</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {flowering.map(city => (
+                        <button
+                          key={city.id}
+                          onClick={() => setSelectedCityId(city.id)}
+                          className="text-left bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all group"
+                        >
+                          <div className="flex items-start justify-between mb-3">
+                            <div>
+                              <div className="font-bold text-slate-900 text-lg group-hover:text-emerald-700 transition-colors">
+                                {language === 'en' ? city.name : city.jpName}
+                              </div>
+                              <div className="text-xs text-slate-400">{city.region}</div>
+                            </div>
+                            <span className="text-2xl font-bold text-pink-500">{city.date}</span>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            <DiffBadge
+                              value={city.comparedWithAllYears}
+                              unit={t('liveDaysUnit')}
+                              earlierLabel={t('liveEarlier')}
+                              laterLabel={t('liveLater')}
+                            />
+                            <DiffBadge
+                              value={city.comparedWithLastYear}
+                              unit={t('liveDaysUnit')}
+                              earlierLabel={t('liveEarlier')}
+                              laterLabel={t('liveLater')}
+                            />
+                          </div>
+                          <div className="text-xs text-emerald-600 font-medium">{t('liveDefaultClickHint')} →</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Full Bloom Cards */}
+                {fullBloom.length > 0 && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xl">💮</span>
+                      <h3 className="text-base font-semibold text-slate-700">{t('liveDefaultFullBloom')}</h3>
+                      <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{fullBloom.length}</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {fullBloom.map(city => (
+                        <button
+                          key={city.id}
+                          onClick={() => setSelectedCityId(city.id)}
+                          className="text-left bg-white border border-pink-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-pink-300 transition-all group"
+                        >
+                          <div className="flex items-start justify-between mb-3">
+                            <div>
+                              <div className="font-bold text-slate-900 text-lg group-hover:text-pink-700 transition-colors">
+                                {language === 'en' ? city.name : city.jpName}
+                              </div>
+                              <div className="text-xs text-slate-400">{city.region}</div>
+                            </div>
+                            <span className="text-2xl font-bold text-pink-500">{city.date}</span>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 mb-3">
+                            <DiffBadge
+                              value={city.comparedWithAllYears}
+                              unit={t('liveDaysUnit')}
+                              earlierLabel={t('liveEarlier')}
+                              laterLabel={t('liveLater')}
+                            />
+                            <DiffBadge
+                              value={city.comparedWithLastYear}
+                              unit={t('liveDaysUnit')}
+                              earlierLabel={t('liveEarlier')}
+                              laterLabel={t('liveLater')}
+                            />
+                          </div>
+                          <div className="text-xs text-pink-600 font-medium">{t('liveDefaultClickHint')} →</div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
         </div>
       ) : (
         <div className="animate-in slide-in-from-bottom-4 duration-500">
-          <div className="mb-8 flex items-center gap-3">
-             <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-2">
+          <div className="mb-8 flex items-center gap-3 flex-wrap">
+            <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-2">
               {selectedCityData?.name || t('loading')} <span className="text-2xl text-slate-400 font-medium">({selectedCityData?.jpName || ""})</span>
             </h1>
+            <button
+              onClick={() => { setSelectedCityId(""); setSelectedCityData(null); }}
+              className="ml-auto flex items-center gap-1.5 px-3 py-1.5 text-sm text-slate-500 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:border-slate-300 hover:text-slate-700 transition-all"
+              title="Clear selection"
+            >
+              <span className="text-base leading-none">✕</span>
+              <span>{language === 'zh' ? '取消选择' : language === 'ja' ? '選択解除' : 'Clear'}</span>
+            </button>
           </div>
           
+          {/* Official JMA Live Announcement Banner */}
+          {selectedCityData?.liveData && selectedCityData.liveData.entries.length > 0 && (() => {
+            const entries = selectedCityData.liveData!.entries;
+            const hasFlowering = entries.some(e => e.flowering);
+            const hasFullBloom = entries.some(e => e.fullBloom);
+            if (!hasFlowering && !hasFullBloom) return null;
+            return (
+              <div className="mb-8 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <h2 className="text-base font-bold text-emerald-800">{t('liveAnnouncementTitle')}</h2>
+                  <span className="ml-auto text-xs text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">
+                    {selectedCityData.liveData!.lastUpdated}
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {hasFlowering && entries.filter(e => e.flowering).map((entry, i) => (
+                    <div key={`f-${i}`} className="bg-white/80 rounded-xl p-4 border border-emerald-100">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-lg">🌸</span>
+                        <span className="text-sm font-semibold text-emerald-800">{t('liveAnnouncedFlowering')}</span>
+                        <a href={entry.url} target="_blank" rel="noopener noreferrer" className="ml-auto text-emerald-400 hover:text-emerald-600 transition-colors">
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                      <div className="text-3xl font-bold text-slate-900 mb-3">{entry.flowering}</div>
+                      <div className="flex flex-wrap gap-2">
+                        <DiffBadge
+                          value={entry.floweringVsAllYears}
+                          unit={t('liveDaysUnit')}
+                          earlierLabel={t('liveEarlier')}
+                          laterLabel={t('liveLater')}
+                        />
+                        <DiffBadge
+                          value={entry.floweringVsLastYear}
+                          unit={t('liveDaysUnit')}
+                          earlierLabel={t('liveEarlier')}
+                          laterLabel={t('liveLater')}
+                        />
+                      </div>
+                      <div className="mt-2 flex gap-2 text-[10px] text-slate-400">
+                        {entry.floweringVsAllYears && <span>{t('liveColVsNormal')}</span>}
+                        {entry.floweringVsAllYears && entry.floweringVsLastYear && <span>·</span>}
+                        {entry.floweringVsLastYear && <span>{t('liveColVsLastYear')}</span>}
+                      </div>
+                    </div>
+                  ))}
+                  {hasFullBloom && entries.filter(e => e.fullBloom).map((entry, i) => (
+                    <div key={`fb-${i}`} className="bg-white/80 rounded-xl p-4 border border-emerald-100">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-lg">💮</span>
+                        <span className="text-sm font-semibold text-emerald-800">{t('liveAnnouncedFullBloom')}</span>
+                        <a href={entry.url} target="_blank" rel="noopener noreferrer" className="ml-auto text-emerald-400 hover:text-emerald-600 transition-colors">
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                      <div className="text-3xl font-bold text-slate-900 mb-3">{entry.fullBloom}</div>
+                      <div className="flex flex-wrap gap-2">
+                        <DiffBadge
+                          value={entry.fullBloomVsAllYears}
+                          unit={t('liveDaysUnit')}
+                          earlierLabel={t('liveEarlier')}
+                          laterLabel={t('liveLater')}
+                        />
+                        <DiffBadge
+                          value={entry.fullBloomVsLastYear}
+                          unit={t('liveDaysUnit')}
+                          earlierLabel={t('liveEarlier')}
+                          laterLabel={t('liveLater')}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+
           {/* Forecast Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {/* Weather Map */}

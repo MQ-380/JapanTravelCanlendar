@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter, useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import { Calendar, MapPin, Globe, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, Globe, ChevronDown, Activity } from 'lucide-react';
 import { useLanguage } from '../app/i18n/context';
 import { Language } from '../app/i18n/translations';
 
@@ -40,6 +40,7 @@ export default function Navbar() {
   // Determine active states
   const isHomeActive = pathname === `/${locale}` || pathname === `/${locale}/`;
   const isCityActive = pathname.startsWith(`/${locale}/city`);
+  const isLiveActive = pathname.startsWith(`/${locale}/live`);
 
   return (
     <header className="bg-white border-b border-pink-100 shadow-sm sticky top-0 z-50">
@@ -71,6 +72,15 @@ export default function Navbar() {
             >
               <MapPin className="w-4 h-4" />
               <span>{t('navSearch')}</span>
+            </Link>
+            <Link 
+              href={`/${locale}/live`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                isLiveActive ? 'bg-white text-pink-600 shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/50'
+              }`}
+            >
+              <Activity className="w-4 h-4" />
+              <span>{t('navLive')}</span>
             </Link>
           </nav>
 

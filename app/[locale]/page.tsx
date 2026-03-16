@@ -33,7 +33,20 @@ export default function GlobalCalendarPage() {
   useEffect(() => {
     fetch('/api/sakura?type=overview')
       .then(res => res.json())
-      .then(data => setOverview(data))
+      .then(data => {
+        setOverview(data);
+        // Auto-select today if it falls within the season range
+        if (data.globalStart && data.globalEnd) {
+          const rawToday = new Date();
+          const today = new Date(rawToday.getFullYear(), rawToday.getMonth(), rawToday.getDate());
+          const globalStartEpoch = new Date(data.globalStart).getTime();
+          const globalEndEpoch = new Date(data.globalEnd).getTime();
+          const todayEpoch = today.getTime();
+          if (todayEpoch >= globalStartEpoch && todayEpoch <= globalEndEpoch) {
+            setSelectedCalendarDate(today);
+          }
+        }
+      })
       .catch(console.error);
   }, []);
 
