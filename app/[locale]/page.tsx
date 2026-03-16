@@ -11,6 +11,19 @@ type CityData = {
   region?: string;
 };
 
+type LiveRow = {
+  id: string;
+  name: string;
+  jpName: string;
+  region: string;
+  source: string;
+  url: string;
+  date: string; // e.g. "3/16"
+  comparedWithAllYears: string | null;
+  comparedWithLastYear: string | null;
+  type: 'flowering' | 'fullBloom';
+};
+
 type OverviewResponse = {
   lastUpdated: Record<string, string>;
   cities: CityData[];
@@ -27,6 +40,7 @@ export default function GlobalCalendarPage() {
   const [bloomingCitiesOnDate, setBloomingCitiesOnDate] = useState<any[]>([]);
   const [loadingBlooming, setLoadingBlooming] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
+  const [liveRows, setLiveRows] = useState<LiveRow[]>([]);
 
   const [activeMonthTab, setActiveMonthTab] = useState<number>(3); // 2=March, 3=April, 4=May
 
@@ -46,6 +60,18 @@ export default function GlobalCalendarPage() {
             setSelectedCalendarDate(today);
           }
         }
+      })
+      .catch(console.error);
+  }, []);
+
+  // Fetch live JMA data once
+  useEffect(() => {
+    fetch('/api/sakura-live')
+      .then(res => res.json())
+      .then(data => {
+        const flowering: LiveRow[] = (data.flowering || []).map((r: any) => ({ ...r, type: 'flowering' }));
+        const fullBloom: LiveRow[] = (data.fullBloom || []).map((r: any) => ({ ...r, type: 'fullBloom' }));
+        setLiveRows([...flowering, ...fullBloom]);
       })
       .catch(console.error);
   }, []);
@@ -205,6 +231,48 @@ export default function GlobalCalendarPage() {
                   )}
                 </div>
               </div>
+
+              {/* JMA Official Announcements for this date */}
+              {(() => {
+                if (!selectedCalendarDate) return null;
+                const m = selectedCalendarDate.getMonth() + 1;
+                const d = selectedCalendarDate.getDate();
+                const dateKey = `${m}/${d}`;
+                const matched = liveRows.filter(r => r.date === dateKey);
+                if (matched.length === 0) return null;
+                return (
+                  <div className="mb-6 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl px-5 py-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      <span className="text-sm font-bold text-emerald-800">
+                        {language === 'zh' ? '气象厅官方公告' : language === 'ja' ? '気象庁 公式発表' : 'Official JMA Announcement'}
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {matched.map((r, i) => (
+                        <a
+                          key={i}
+                          href={r.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-emerald-200 rounded-full text-sm hover:border-emerald-400 hover:shadow-sm transition-all"
+                        >
+                          <span>{r.type === 'flowering' ? '🌸' : '💮'}</span>
+                          <span className="font-semibold text-slate-800">{language === 'en' ? r.name : r.jpName}</span>
+                          <span className="text-xs text-emerald-600 font-medium">
+                            {r.type === 'flowering'
+                              ? (language === 'zh' ? '开花' : language === 'ja' ? '開花' : 'Flowering')
+                              : (language === 'zh' ? '满开' : language === 'ja' ? '満開' : 'Full Bloom')}
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Region Filter */}
               {!loadingBlooming && bloomingCitiesOnDate.length > 0 && (
