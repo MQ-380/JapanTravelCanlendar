@@ -59,11 +59,12 @@ type OverviewResponse = {
 
 const POPULAR_CITY_IDS = ["sapporo", "tokyo", "kanazawa", "kyoto", "osaka", "fukuoka"];
 
-function DiffBadge({ value, unit, earlierLabel, laterLabel }: {
+function DiffBadge({ value, unit, earlierLabel, laterLabel, labelFirst = false }: {
   value: string | null;
   unit: string;
   earlierLabel: string;
   laterLabel: string;
+  labelFirst?: boolean;
 }) {
   if (!value) return <span className="text-slate-300 text-xs">—</span>;
   const num = parseInt(value, 10);
@@ -76,9 +77,11 @@ function DiffBadge({ value, unit, earlierLabel, laterLabel }: {
     : isLate
     ? 'bg-red-50 text-red-700 border-red-200'
     : 'bg-slate-50 text-slate-500 border-slate-200';
+  const label = isEarly ? earlierLabel : isLate ? laterLabel : '±0';
+  const arrow = isEarly ? '▲' : isLate ? '▼' : '';
   return (
     <span className={`inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-xs font-semibold border ${cls}`}>
-      {isEarly ? '▲' : isLate ? '▼' : ''}{abs}{unit} {isEarly ? earlierLabel : isLate ? laterLabel : '±0'}
+      {arrow}{labelFirst ? `${label}${abs}${unit}` : `${abs}${unit} ${label}`}
     </span>
   );
 }
@@ -371,12 +374,14 @@ export default function CitySearch() {
                               unit={t('liveDaysUnit')}
                               earlierLabel={t('liveEarlier')}
                               laterLabel={t('liveLater')}
+                              labelFirst={language === 'zh'}
                             />
                             <DiffBadge
                               value={city.comparedWithLastYear}
                               unit={t('liveDaysUnit')}
                               earlierLabel={t('liveEarlier')}
                               laterLabel={t('liveLater')}
+                              labelFirst={language === 'zh'}
                             />
                           </div>
                           <div className="text-xs text-emerald-600 font-medium">{t('liveDefaultClickHint')} →</div>
@@ -416,12 +421,14 @@ export default function CitySearch() {
                               unit={t('liveDaysUnit')}
                               earlierLabel={t('liveEarlier')}
                               laterLabel={t('liveLater')}
+                              labelFirst={language === 'zh'}
                             />
                             <DiffBadge
                               value={city.comparedWithLastYear}
                               unit={t('liveDaysUnit')}
                               earlierLabel={t('liveEarlier')}
                               laterLabel={t('liveLater')}
+                              labelFirst={language === 'zh'}
                             />
                           </div>
                           <div className="text-xs text-pink-600 font-medium">{t('liveDefaultClickHint')} →</div>
@@ -485,12 +492,14 @@ export default function CitySearch() {
                           unit={t('liveDaysUnit')}
                           earlierLabel={t('liveEarlier')}
                           laterLabel={t('liveLater')}
+                          labelFirst={language === 'zh'}
                         />
                         <DiffBadge
                           value={entry.floweringVsLastYear}
                           unit={t('liveDaysUnit')}
                           earlierLabel={t('liveEarlier')}
                           laterLabel={t('liveLater')}
+                          labelFirst={language === 'zh'}
                         />
                       </div>
                       <div className="mt-2 flex gap-2 text-[10px] text-slate-400">
@@ -516,12 +525,14 @@ export default function CitySearch() {
                           unit={t('liveDaysUnit')}
                           earlierLabel={t('liveEarlier')}
                           laterLabel={t('liveLater')}
+                          labelFirst={language === 'zh'}
                         />
                         <DiffBadge
                           value={entry.fullBloomVsLastYear}
                           unit={t('liveDaysUnit')}
                           earlierLabel={t('liveEarlier')}
                           laterLabel={t('liveLater')}
+                          labelFirst={language === 'zh'}
                         />
                       </div>
                     </div>

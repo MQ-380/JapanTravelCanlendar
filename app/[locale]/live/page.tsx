@@ -24,11 +24,12 @@ type LiveData = {
   fullBloom: LiveRow[];
 };
 
-function DiffBadge({ value, unit, earlierLabel, laterLabel }: {
+function DiffBadge({ value, unit, earlierLabel, laterLabel, labelFirst = false }: {
   value: string | null;
   unit: string;
   earlierLabel: string;
   laterLabel: string;
+  labelFirst?: boolean;
 }) {
   if (value === null || value === undefined) {
     return <span className="text-slate-400 text-xs">—</span>;
@@ -48,11 +49,11 @@ function DiffBadge({ value, unit, earlierLabel, laterLabel }: {
     : 'bg-slate-50 text-slate-500 border border-slate-200';
 
   const label = isEarly ? earlierLabel : isLate ? laterLabel : '±0';
+  const arrow = isEarly ? '▲' : isLate ? '▼' : '';
 
   return (
     <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${bgClass}`}>
-      {isEarly ? '▲' : isLate ? '▼' : ''}
-      {abs}{unit} {label}
+      {arrow}{labelFirst ? `${label}${abs}${unit}` : `${abs}${unit} ${label}`}
     </span>
   );
 }
@@ -76,79 +77,87 @@ function LiveTable({
     );
   }
 
+  const sourceRow = rows[0];
+
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm text-left">
-          <thead className="bg-pink-50/60 border-b border-pink-100">
-            <tr>
-              <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColCity')}</th>
-              <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider hidden sm:table-cell">{t('liveColRegion')}</th>
-              <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColDate')}</th>
-              <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColVsNormal')}</th>
-              <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColVsLastYear')}</th>
-              <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider hidden md:table-cell">{t('liveSource')}</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-50">
-            {rows.map((row, idx) => (
-              <motion.tr
-                key={`${row.id}-${row.source}-${idx}`}
-                initial={{ opacity: 0, x: -4 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.03 }}
-                className="hover:bg-pink-50/30 transition-colors"
-              >
-                <td className="px-5 py-3.5">
-                  <div className="flex flex-col">
-                    <span className="font-semibold text-slate-900">
-                      {language === 'en' ? row.name : row.jpName}
+    <div>
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm text-left">
+            <thead className="bg-pink-50/60 border-b border-pink-100">
+              <tr>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColCity')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider hidden sm:table-cell">{t('liveColRegion')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColDate')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColVsNormal')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColVsLastYear')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-50">
+              {rows.map((row, idx) => (
+                <motion.tr
+                  key={`${row.id}-${row.source}-${idx}`}
+                  initial={{ opacity: 0, x: -4 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.03 }}
+                  className="hover:bg-pink-50/30 transition-colors"
+                >
+                  <td className="px-5 py-3.5">
+                    <div className="flex flex-col">
+                      <span className="font-semibold text-slate-900">
+                        {language === 'en' ? row.name : row.jpName}
+                      </span>
+                      {language === 'en' && (
+                        <span className="text-xs text-slate-400">{row.jpName}</span>
+                      )}
+                    </div>
+                  </td>
+                  <td className="px-5 py-3.5 text-slate-500 hidden sm:table-cell">
+                    <span className="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-md text-xs font-medium">
+                      {row.region}
                     </span>
-                    {language === 'en' && (
-                      <span className="text-xs text-slate-400">{row.jpName}</span>
-                    )}
-                  </div>
-                </td>
-                <td className="px-5 py-3.5 text-slate-500 hidden sm:table-cell">
-                  <span className="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-md text-xs font-medium">
-                    {row.region}
-                  </span>
-                </td>
-                <td className="px-5 py-3.5">
-                  <span className="font-semibold text-pink-600 text-base">{row.date}</span>
-                </td>
-                <td className="px-5 py-3.5">
-                  <DiffBadge
-                    value={row.comparedWithAllYears}
-                    unit={t('liveDaysUnit')}
-                    earlierLabel={t('liveEarlier')}
-                    laterLabel={t('liveLater')}
-                  />
-                </td>
-                <td className="px-5 py-3.5">
-                  <DiffBadge
-                    value={row.comparedWithLastYear}
-                    unit={t('liveDaysUnit')}
-                    earlierLabel={t('liveEarlier')}
-                    laterLabel={t('liveLater')}
-                  />
-                </td>
-                <td className="px-5 py-3.5 hidden md:table-cell">
-                  <a
-                    href={row.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-slate-400 hover:text-pink-500 transition-colors"
-                  >
-                    {row.source}
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                </td>
-              </motion.tr>
-            ))}
-          </tbody>
-        </table>
+                  </td>
+                  <td className="px-5 py-3.5">
+                    <span className="font-semibold text-pink-600 text-base">{row.date}</span>
+                  </td>
+                  <td className="px-5 py-3.5">
+                    <DiffBadge
+                      value={row.comparedWithAllYears}
+                      unit={t('liveDaysUnit')}
+                      earlierLabel={t('liveEarlier')}
+                      laterLabel={t('liveLater')}
+                      labelFirst={language === 'zh'}
+                    />
+                  </td>
+                  <td className="px-5 py-3.5">
+                    <DiffBadge
+                      value={row.comparedWithLastYear}
+                      unit={t('liveDaysUnit')}
+                      earlierLabel={t('liveEarlier')}
+                      laterLabel={t('liveLater')}
+                      labelFirst={language === 'zh'}
+                    />
+                  </td>
+                </motion.tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+      {/* Single source attribution */}
+      {sourceRow && (
+        <div className="mt-2 flex justify-end">
+          <a
+            href={sourceRow.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-pink-500 transition-colors"
+          >
+            {t('liveSource')}: {sourceRow.source}
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      )}
     </div>
   );
 }
