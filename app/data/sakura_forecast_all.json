@@ -1,9 +1,9 @@
 {
   "lastUpdated": {
-    "weatherMap": "2026-03-12",
-    "weathernews": "2026-03-11",
+    "weatherMap": "2026-03-16",
+    "weathernews": "2026-03-16",
     "japanMeteorologicalCorp": "2026-03-12",
-    "tenki.jp": "2026-03-11"
+    "tenki.jp": "2026-03-15"
   },
   "cities": [
     {
@@ -544,7 +544,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/19",
+            "floweringDate": "3/18",
             "fullBloomDate": "3/24"
           }
         },
@@ -704,7 +704,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/22",
+            "floweringDate": "3/19",
             "fullBloomDate": "3/25"
           }
         },
@@ -944,7 +944,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/19",
+            "floweringDate": "3/17",
             "fullBloomDate": "3/24"
           }
         },
@@ -976,7 +976,7 @@
           "source": "Weather Map",
           "url": "https://sakura.weathermap.jp/",
           "current": {
-            "floweringDate": "3/18",
+            "floweringDate": "3/16",
             "fullBloomDate": "3/26"
           }
         },
@@ -984,7 +984,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/19",
+            "floweringDate": "3/16",
             "fullBloomDate": "3/25"
           }
         },
@@ -1592,7 +1592,7 @@
           "source": "Weather Map",
           "url": "https://sakura.weathermap.jp/",
           "current": {
-            "floweringDate": "3/15",
+            "floweringDate": "3/16",
             "fullBloomDate": "3/25"
           }
         },
@@ -1600,7 +1600,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/19",
+            "floweringDate": "3/16",
             "fullBloomDate": "3/22"
           }
         },
