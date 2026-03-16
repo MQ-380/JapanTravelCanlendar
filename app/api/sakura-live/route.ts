@@ -4,24 +4,39 @@ import path from 'path';
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'app', 'data', 'sakura_live.json');
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(fileContents);
+    const liveFilePath = path.join(process.cwd(), 'app', 'data', 'sakura_live.json');
+    const forecastFilePath = path.join(process.cwd(), 'app', 'data', 'sakura_forecast_all.json');
+
+    const liveData = JSON.parse(fs.readFileSync(liveFilePath, 'utf8'));
+    const forecastData = JSON.parse(fs.readFileSync(forecastFilePath, 'utf8'));
+
+    // Build a lookup: by id and by jpName → { region, name }
+    const cityInfoMap: Record<string, { region: string; name: string }> = {};
+    for (const city of forecastData.cities) {
+      const info = { region: city.region ?? null, name: city.name ?? null };
+      if (city.id) cityInfoMap[city.id] = info;
+      if (city.jpName) cityInfoMap[city.jpName] = info;
+    }
+
+    const resolveInfo = (city: any) =>
+      cityInfoMap[city.id] ?? cityInfoMap[city.jpName] ?? { region: city.region, name: city.name };
 
     // Flatten: one row per city per source, for flowering and full bloom separately
     const floweringRows: any[] = [];
     const fullBloomRows: any[] = [];
 
-    data.cities.forEach((city: any) => {
+    liveData.cities.forEach((city: any) => {
+      const { region, name } = resolveInfo(city);
+
       city.lives.forEach((live: any) => {
         const current = live.current || {};
 
         if (current.floweringDate) {
           floweringRows.push({
             id: city.id,
-            name: city.name,
+            name,
             jpName: city.jpName,
-            region: city.region,
+            region,
             source: live.source,
             url: live.url,
             date: current.floweringDate,
@@ -33,9 +48,9 @@ export async function GET() {
         if (current.fullBloomDate) {
           fullBloomRows.push({
             id: city.id,
-            name: city.name,
+            name,
             jpName: city.jpName,
-            region: city.region,
+            region,
             source: live.source,
             url: live.url,
             date: current.fullBloomDate,
@@ -47,7 +62,7 @@ export async function GET() {
     });
 
     return NextResponse.json({
-      lastUpdated: data.lastUpdated,
+      lastUpdated: liveData.lastUpdated,
       flowering: floweringRows,
       fullBloom: fullBloomRows,
     });
