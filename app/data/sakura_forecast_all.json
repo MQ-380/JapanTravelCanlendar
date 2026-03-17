@@ -3,7 +3,7 @@
     "weatherMap": "2026-03-16",
     "weathernews": "2026-03-16",
     "japanMeteorologicalCorp": "2026-03-12",
-    "tenki.jp": "2026-03-15"
+    "tenki.jp": "2026-03-17"
   },
   "cities": [
     {
@@ -120,7 +120,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/29",
+            "floweringDate": "04/28",
             "fullBloomDate": "05/04"
           }
         }
@@ -160,8 +160,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/16",
-            "fullBloomDate": "04/20"
+            "floweringDate": "04/15",
+            "fullBloomDate": "04/19"
           }
         }
       ]
@@ -200,8 +200,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/10",
-            "fullBloomDate": "04/14"
+            "floweringDate": "04/09",
+            "fullBloomDate": "04/13"
           }
         }
       ]
@@ -240,7 +240,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/10",
+            "floweringDate": "04/09",
             "fullBloomDate": "04/17"
           }
         }
@@ -280,8 +280,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/02",
-            "fullBloomDate": "04/07"
+            "floweringDate": "04/01",
+            "fullBloomDate": "04/06"
           }
         }
       ]
@@ -320,8 +320,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/08",
-            "fullBloomDate": "04/12"
+            "floweringDate": "04/07",
+            "fullBloomDate": "04/11"
           }
         }
       ]
@@ -360,8 +360,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/01",
-            "fullBloomDate": "04/06"
+            "floweringDate": "03/30",
+            "fullBloomDate": "04/03"
           }
         }
       ]
@@ -400,8 +400,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/27",
-            "fullBloomDate": "04/03"
+            "floweringDate": "03/25",
+            "fullBloomDate": "03/31"
           }
         }
       ]
@@ -440,8 +440,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/26",
-            "fullBloomDate": "04/02"
+            "floweringDate": "03/24",
+            "fullBloomDate": "03/30"
           }
         }
       ]
@@ -480,8 +480,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/25",
-            "fullBloomDate": "04/01"
+            "floweringDate": "03/23",
+            "fullBloomDate": "03/29"
           }
         }
       ]
@@ -520,8 +520,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/23",
-            "fullBloomDate": "03/30"
+            "floweringDate": "03/21",
+            "fullBloomDate": "03/27"
           }
         }
       ]
@@ -560,8 +560,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/21",
-            "fullBloomDate": "03/28"
+            "floweringDate": "03/19",
+            "fullBloomDate": "03/25"
           }
         }
       ]
@@ -600,8 +600,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/28",
-            "fullBloomDate": "04/05"
+            "floweringDate": "03/26",
+            "fullBloomDate": "04/02"
           }
         }
       ]
@@ -640,8 +640,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/23",
-            "fullBloomDate": "03/30"
+            "floweringDate": "03/21",
+            "fullBloomDate": "03/27"
           }
         }
       ]
@@ -680,8 +680,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/04",
-            "fullBloomDate": "04/09"
+            "floweringDate": "04/03",
+            "fullBloomDate": "04/08"
           }
         }
       ]
@@ -720,8 +720,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/16",
-            "fullBloomDate": "04/02"
+            "floweringDate": "03/22",
+            "fullBloomDate": "04/01"
           }
         }
       ]
@@ -760,8 +760,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "04/03",
-            "fullBloomDate": "04/07"
+            "floweringDate": "04/02",
+            "fullBloomDate": "04/06"
           }
         }
       ]
@@ -920,8 +920,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/21",
-            "fullBloomDate": "04/01"
+            "floweringDate": "03/20",
+            "fullBloomDate": "03/28"
           }
         }
       ]
@@ -960,8 +960,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/20",
-            "fullBloomDate": "03/30"
+            "floweringDate": "03/17",
+            "fullBloomDate": "03/24"
           }
         }
       ]
@@ -1001,7 +1001,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/16",
-            "fullBloomDate": "03/30"
+            "fullBloomDate": "03/23"
           }
         }
       ]
@@ -1040,8 +1040,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/23",
-            "fullBloomDate": "04/02"
+            "floweringDate": "03/21",
+            "fullBloomDate": "03/29"
           }
         }
       ]
@@ -1080,7 +1080,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/29",
+            "floweringDate": "03/27",
             "fullBloomDate": "04/05"
           }
         }
@@ -1120,8 +1120,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/21",
-            "fullBloomDate": "03/28"
+            "floweringDate": "03/19",
+            "fullBloomDate": "03/25"
           }
         }
       ]
@@ -1160,7 +1160,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/24",
+            "floweringDate": "03/22",
             "fullBloomDate": "04/02"
           }
         }
@@ -1200,7 +1200,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/28",
+            "floweringDate": "03/27",
             "fullBloomDate": "04/05"
           }
         }
@@ -1240,7 +1240,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/26",
+            "floweringDate": "03/25",
             "fullBloomDate": "04/04"
           }
         }
@@ -1280,7 +1280,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/24",
+            "floweringDate": "03/23",
             "fullBloomDate": "04/02"
           }
         }
@@ -1320,8 +1320,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/27",
-            "fullBloomDate": "04/04"
+            "floweringDate": "03/26",
+            "fullBloomDate": "04/03"
           }
         }
       ]
@@ -1361,7 +1361,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/21",
-            "fullBloomDate": "04/01"
+            "fullBloomDate": "03/31"
           }
         }
       ]
@@ -1441,7 +1441,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/26",
-            "fullBloomDate": "04/03"
+            "fullBloomDate": "04/04"
           }
         }
       ]
@@ -1456,7 +1456,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/24",
+            "floweringDate": "03/23",
             "fullBloomDate": "04/02"
           }
         }
@@ -1537,7 +1537,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/25",
-            "fullBloomDate": "04/03"
+            "fullBloomDate": "04/02"
           }
         }
       ]
@@ -1617,7 +1617,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/16",
-            "fullBloomDate": "03/27"
+            "fullBloomDate": "03/25"
           }
         }
       ]
@@ -1656,7 +1656,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/20",
+            "floweringDate": "03/21",
             "fullBloomDate": "03/30"
           }
         }
@@ -1696,8 +1696,8 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/23",
-            "fullBloomDate": "04/03"
+            "floweringDate": "03/24",
+            "fullBloomDate": "04/04"
           }
         }
       ]

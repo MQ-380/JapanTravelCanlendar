@@ -35,6 +35,21 @@
         }
       ]
     },
+        {
+      "id": "nagoya",
+      "name": "Nagoya",
+      "jpName": "名古屋",
+      "region": "北陸・東海",
+      "forecasts": [{
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/17",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-7"
+          }
+        }]
+    },
     {
       "id": "甲府",
       "name": "甲府",
