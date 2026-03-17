@@ -28,7 +28,10 @@ export async function GET() {
     liveData.cities.forEach((city: any) => {
       const { region, name } = resolveInfo(city);
 
-      city.lives.forEach((live: any) => {
+      // Some entries may use "forecasts" instead of "lives" — skip those gracefully
+      const lives: any[] = Array.isArray(city.lives) ? city.lives : [];
+
+      lives.forEach((live: any) => {
         const current = live.current || {};
 
         if (current.floweringDate) {
@@ -60,6 +63,16 @@ export async function GET() {
         }
       });
     });
+
+    // Parse "M/D" style date strings into a sortable number (month * 100 + day)
+    const parseMD = (d: string) => {
+      const [m, day] = d.split('/').map(Number);
+      return (m || 0) * 100 + (day || 0);
+    };
+
+    // Sort descending: later bloom date appears first
+    floweringRows.sort((a, b) => parseMD(b.date) - parseMD(a.date));
+    fullBloomRows.sort((a, b) => parseMD(b.date) - parseMD(a.date));
 
     return NextResponse.json({
       lastUpdated: liveData.lastUpdated,
