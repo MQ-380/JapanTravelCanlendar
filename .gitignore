@@ -52,3 +52,6 @@ metadata.json
 app/scrape.js
 app/test.ts
 app/applet/
+
+
+/.claude

@@ -3,7 +3,7 @@
     "weatherMap": "2026-03-16",
     "weathernews": "2026-03-16",
     "japanMeteorologicalCorp": "2026-03-12",
-    "tenki.jp": "2026-03-17"
+    "tenki.jp": "2026-03-18"
   },
   "cities": [
     {
@@ -720,7 +720,7 @@
           "source": "tenki.jp",
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
-            "floweringDate": "03/22",
+            "floweringDate": "03/16",
             "fullBloomDate": "04/01"
           }
         }

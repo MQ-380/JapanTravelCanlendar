@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16",
+  "lastUpdated": "2026-03-18",
   "cities": [
     {
       "id": "kochi",
@@ -14,6 +14,23 @@
             "floweringDate": "3/16",
             "comparedWithLastYear": "-7",
             "comparedWithAllYears": "-6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nagoya",
+      "name": "Nagoya",
+      "jpName": "名古屋",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/17",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-7"
           }
         }
       ]
@@ -36,25 +53,8 @@
       ]
     },
     {
-      "id": "nagoya",
-      "name": "Nagoya",
-      "jpName": "名古屋",
-      "region": "北陸・東海",
-      "lives": [
-        {
-          "source": "気象庁",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/17",
-            "comparedWithLastYear": "-9",
-            "comparedWithAllYears": "-7"
-          }
-        }
-      ]
-    },
-    {
-      "id": "甲府",
-      "name": "甲府",
+      "id": "kofu",
+      "name": "Kofu",
       "jpName": "甲府",
       "region": "未知",
       "lives": [
