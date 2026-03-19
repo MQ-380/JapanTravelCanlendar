@@ -19,6 +19,23 @@
       ]
     },
     {
+      "id": "hiroshima",
+      "name": "Hiroshima",
+      "jpName": "広島",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/19",
+            "comparedWithLastYear": "-7",
+            "comparedWithAllYears": "-6"
+          }
+        }
+      ]
+    },
+    {
       "id": "nagoya",
       "name": "Nagoya",
       "jpName": "名古屋",
@@ -48,6 +65,23 @@
             "floweringDate": "3/16",
             "comparedWithLastYear": "-9",
             "comparedWithAllYears": "-9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "jpName": "東京",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/19",
+            "comparedWithLastYear": "-5",
+            "comparedWithAllYears": "-5"
           }
         }
       ]
