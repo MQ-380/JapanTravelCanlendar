@@ -53,6 +53,23 @@
       ]
     },
     {
+      "id": "shizuoka",
+      "name": "Shizuoka",
+      "jpName": "静岡",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/20",
+            "comparedWithLastYear": "-6",
+            "comparedWithAllYears": "-4"
+          }
+        }
+      ]
+    },
+    {
       "id": "gifu",
       "name": "Gifu",
       "jpName": "岐阜",
