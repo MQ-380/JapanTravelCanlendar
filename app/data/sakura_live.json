@@ -2,6 +2,23 @@
   "lastUpdated": "2026-03-21",
   "cities": [
     {
+      "id": "佐賀",
+      "name": "佐賀",
+      "jpName": "佐賀",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/21",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-3"
+          }
+        }
+      ]
+    },
+    {
       "id": "kochi",
       "name": "Kochi",
       "jpName": "高知",
