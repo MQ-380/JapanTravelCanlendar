@@ -1,8 +1,8 @@
 {
   "lastUpdated": {
     "weatherMap": "2026-03-21",
-    "weathernews": "2026-03-21",
-    "japanMeteorologicalCorp": "2026-03-21",
+    "weathernews": "2026-03-22",
+    "japanMeteorologicalCorp": "2026-03-22",
     "tenki.jp": "2026-03-22"
   },
   "cities": [
@@ -464,7 +464,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/27",
+            "floweringDate": "3/22",
             "fullBloomDate": "3/29"
           }
         },
@@ -472,7 +472,7 @@
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
-            "floweringDate": "3/24",
+            "floweringDate": "3/22",
             "fullBloomDate": "3/30"
           }
         },
