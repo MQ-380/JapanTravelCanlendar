@@ -138,6 +138,23 @@
       ]
     },
     {
+      "id": "yokohama",
+      "name": "Yokohama",
+      "jpName": "横浜",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/22",
+            "comparedWithLastYear": "-3",
+            "comparedWithAllYears": "-3"
+          }
+        }
+      ]
+    },
+    {
       "id": "kofu",
       "name": "Kofu",
       "jpName": "甲府",
