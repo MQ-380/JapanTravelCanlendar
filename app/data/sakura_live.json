@@ -19,6 +19,23 @@
       ]
     },
     {
+      "id": "kumamoto",
+      "name": "Kumamoto",
+      "jpName": "熊本",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/23",
+            "comparedWithLastYear": "0",
+            "comparedWithAllYears": "+1"
+          }
+        }
+      ]
+    },
+    {
       "id": "kochi",
       "name": "Kochi",
       "jpName": "高知",
