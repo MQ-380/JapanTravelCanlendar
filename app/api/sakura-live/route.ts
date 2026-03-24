@@ -57,8 +57,8 @@ export async function GET() {
             source: live.source,
             url: live.url,
             date: current.fullBloomDate,
-            comparedWithAllYears: current.fullBloomComparedWithAllYears ?? null,
-            comparedWithLastYear: current.fullBloomComparedWithLastYear ?? null,
+            comparedWithAllYears: current.comparedWithAllYears ?? null,
+            comparedWithLastYear: current.comparedWithLastYear ?? null,
           });
         }
       });

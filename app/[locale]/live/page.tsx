@@ -83,7 +83,14 @@ function LiveTable({
     <div>
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left">
+          <table className="w-full text-sm text-left table-fixed">
+            <colgroup>
+              <col className="w-[28%]" />
+              <col className="w-[22%] hidden sm:table-column" />
+              <col className="w-[15%]" />
+              <col className="w-[18%]" />
+              <col className="w-[17%]" />
+            </colgroup>
             <thead className="bg-pink-50/60 border-b border-pink-100">
               <tr>
                 <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColCity')}</th>
@@ -199,6 +206,26 @@ export default function LiveReportPage() {
             <span>{liveData.lastUpdated}</span>
           </div>
         )}
+        {!loading && (
+          <div className="mt-5 flex gap-3">
+            <a
+              href="#flowering"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-pink-300 hover:text-pink-600 transition-all shadow-sm"
+            >
+              <span>🌸</span>
+              {t('liveFloweringTable')}
+              <span className="text-xs text-slate-400 font-normal">({liveData?.flowering.length ?? 0})</span>
+            </a>
+            <a
+              href="#fullbloom"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-pink-300 hover:text-pink-600 transition-all shadow-sm"
+            >
+              <span>💮</span>
+              {t('liveFullBloomTable')}
+              <span className="text-xs text-slate-400 font-normal">({liveData?.fullBloom.length ?? 0})</span>
+            </a>
+          </div>
+        )}
       </div>
 
       {loading ? (
@@ -209,6 +236,7 @@ export default function LiveReportPage() {
         <div className="flex flex-col gap-12">
           {/* Flowering Table */}
           <motion.section
+            id="flowering"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0 }}
@@ -230,6 +258,7 @@ export default function LiveReportPage() {
 
           {/* Full Bloom Table */}
           <motion.section
+            id="fullbloom"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}

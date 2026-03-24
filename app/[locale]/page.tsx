@@ -243,6 +243,8 @@ export default function GlobalCalendarPage() {
                 const dateKey = `${m}/${d}`;
                 const matched = liveRows.filter(r => r.date === dateKey);
                 if (matched.length === 0) return null;
+                const floweringMatched = matched.filter(r => r.type === 'flowering');
+                const fullBloomMatched = matched.filter(r => r.type === 'fullBloom');
                 return (
                   <div className="mb-6 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl px-5 py-4">
                     <div className="flex items-center gap-2 mb-3">
@@ -254,24 +256,57 @@ export default function GlobalCalendarPage() {
                         {language === 'zh' ? '气象厅官方公告' : language === 'ja' ? '気象庁 公式発表' : 'Official JMA Announcement'}
                       </span>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {matched.map((r, i) => (
-                        <a
-                          key={i}
-                          href={r.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-emerald-200 rounded-full text-sm hover:border-emerald-400 hover:shadow-sm transition-all"
-                        >
-                          <span>{r.type === 'flowering' ? '🌸' : '💮'}</span>
-                          <span className="font-semibold text-slate-800">{language === 'en' ? r.name : r.jpName}</span>
-                          <span className="text-xs text-emerald-600 font-medium">
-                            {r.type === 'flowering'
-                              ? (language === 'zh' ? '开花' : language === 'ja' ? '開花' : 'Flowering')
-                              : (language === 'zh' ? '满开' : language === 'ja' ? '満開' : 'Full Bloom')}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {/* Flowering column */}
+                      <div>
+                        <div className="flex items-center gap-1.5 mb-2">
+                          <span>🌸</span>
+                          <span className="text-xs font-semibold text-emerald-700">
+                            {language === 'zh' ? '开花' : language === 'ja' ? '開花' : 'Flowering'}
                           </span>
-                        </a>
-                      ))}
+                          <span className="text-xs text-emerald-600">({floweringMatched.length})</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {floweringMatched.length === 0 ? (
+                            <span className="text-xs text-slate-400">—</span>
+                          ) : floweringMatched.map((r, i) => (
+                            <a
+                              key={i}
+                              href={r.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-emerald-200 rounded-full text-sm hover:border-emerald-400 hover:shadow-sm transition-all"
+                            >
+                              <span className="font-semibold text-slate-800">{language === 'en' ? r.name : r.jpName}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                      {/* Full Bloom column */}
+                      <div>
+                        <div className="flex items-center gap-1.5 mb-2">
+                          <span>💮</span>
+                          <span className="text-xs font-semibold text-emerald-700">
+                            {language === 'zh' ? '满开' : language === 'ja' ? '満開' : 'Full Bloom'}
+                          </span>
+                          <span className="text-xs text-emerald-600">({fullBloomMatched.length})</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {fullBloomMatched.length === 0 ? (
+                            <span className="text-xs text-slate-400">—</span>
+                          ) : fullBloomMatched.map((r, i) => (
+                            <a
+                              key={i}
+                              href={r.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-emerald-200 rounded-full text-sm hover:border-emerald-400 hover:shadow-sm transition-all"
+                            >
+                              <span className="font-semibold text-slate-800">{language === 'en' ? r.name : r.jpName}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );
