@@ -1,7 +1,7 @@
 {
   "lastUpdated": {
-    "weatherMap": "2026-03-23",
-    "weathernews": "2026-03-23",
+    "weatherMap": "2026-03-24",
+    "weathernews": "2026-03-24",
     "japanMeteorologicalCorp": "2026-03-23",
     "tenki.jp": "2026-03-23"
   },
@@ -424,7 +424,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/26",
+            "floweringDate": "3/24",
             "fullBloomDate": "3/30"
           }
         },
@@ -1552,7 +1552,7 @@
           "source": "Weather Map",
           "url": "https://sakura.weathermap.jp/",
           "current": {
-            "floweringDate": "3/23",
+            "floweringDate": "3/24",
             "fullBloomDate": "4/2"
           }
         },
@@ -1560,7 +1560,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/25",
+            "floweringDate": "3/24",
             "fullBloomDate": "3/24"
           }
         },
@@ -1840,7 +1840,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "3/25",
+            "floweringDate": "3/24",
             "fullBloomDate": "3/23"
           }
         },

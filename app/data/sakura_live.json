@@ -36,6 +36,40 @@
       ]
     },
     {
+      "id": "miyazaki",
+      "name": "Miyazaki",
+      "jpName": "宮崎",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "0",
+            "comparedWithAllYears": "+1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "matsuyama",
+      "name": "Matsuyama",
+      "jpName": "松山",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "0"
+          }
+        }
+      ]
+    },
+    {
       "id": "kochi",
       "name": "Kochi",
       "jpName": "高知",
@@ -150,6 +184,23 @@
             "floweringDate": "3/19",
             "comparedWithLastYear": "-5",
             "comparedWithAllYears": "-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "utsunomiya",
+      "name": "Utsunomiya",
+      "jpName": "宇都宮",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-6"
           }
         }
       ]
