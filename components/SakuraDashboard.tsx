@@ -103,17 +103,17 @@ export default function SakuraDashboard() {
   });
 
   return (
-    <div className="min-h-screen bg-[#FFF5F7] text-slate-800 font-sans selection:bg-pink-200 pb-20">
+    <div className="min-h-screen bg-[#FFF5F7] dark:bg-[#1a1520] text-slate-800 dark:text-slate-100 font-sans selection:bg-pink-200 pb-20 transition-colors duration-200">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-10 border-b border-pink-100 shadow-sm">
+      <header className="bg-white/80 dark:bg-[#1e1828]/80 backdrop-blur-md sticky top-0 z-10 border-b border-pink-100 dark:border-pink-900/30 shadow-sm">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-2xl">🌸</span>
-            <h1 className="text-xl font-medium tracking-tight text-pink-950">
+            <h1 className="text-xl font-medium tracking-tight text-pink-950 dark:text-pink-300">
               Sakura Forecast <span className="text-pink-400 font-light">Aggregator</span>
             </h1>
           </div>
-          <div className="flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full">
+          <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
             <Clock className="w-3.5 h-3.5" />
             Updated {lastUpdatedDate}
           </div>
@@ -128,10 +128,10 @@ export default function SakuraDashboard() {
           className="max-w-2xl mx-auto mb-12"
         >
           <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 dark:text-slate-100 tracking-tight mb-4">
               When will the sakura bloom?
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               Select a major city to compare the latest forecasts and discover recommended viewing spots.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function SakuraDashboard() {
                 }}
                 onFocus={() => setIsDropdownOpen(true)}
                 placeholder="Search for a city (e.g., Tokyo, Kyoto, Sapporo)"
-                className="block w-full pl-11 pr-4 py-4 text-lg border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 rounded-2xl bg-white shadow-sm text-slate-900 transition-shadow hover:shadow-md"
+                className="block w-full pl-11 pr-4 py-4 text-lg border border-pink-200 dark:border-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 rounded-2xl bg-white dark:bg-[#231c2a] shadow-sm text-slate-900 dark:text-slate-100 transition-shadow hover:shadow-md placeholder:text-slate-400 dark:placeholder:text-slate-600"
               />
               <Search className="absolute right-4 h-5 w-5 text-slate-400" />
             </div>
@@ -160,20 +160,20 @@ export default function SakuraDashboard() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden max-h-80 overflow-y-auto"
+                  className="absolute z-50 w-full mt-2 bg-white dark:bg-[#231c2a] rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden max-h-80 overflow-y-auto"
                 >
                   {filteredCities.length === 0 ? (
-                    <div className="p-4 text-center text-slate-500">No cities found.</div>
+                    <div className="p-4 text-center text-slate-500 dark:text-slate-400">No cities found.</div>
                   ) : (
                     <ul className="py-2">
                       {filteredCities.map(city => (
                         <li key={city.id}>
                           <button
                             onClick={() => handleSelectCity(city)}
-                            className="w-full text-left px-4 py-3 hover:bg-pink-50 flex items-center justify-between transition-colors"
+                            className="w-full text-left px-4 py-3 hover:bg-pink-50 dark:hover:bg-pink-900/20 flex items-center justify-between transition-colors"
                           >
-                            <span className="font-medium text-slate-900">{city.name}</span>
-                            <span className="text-sm text-slate-500">{city.jpName}</span>
+                            <span className="font-medium text-slate-900 dark:text-slate-100">{city.name}</span>
+                            <span className="text-sm text-slate-500 dark:text-slate-400">{city.jpName}</span>
                           </button>
                         </li>
                       ))}
@@ -186,7 +186,7 @@ export default function SakuraDashboard() {
 
           {/* Quick Select Chips */}
           <div className="mt-6">
-            <div className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-1 justify-center">
+            <div className="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3 flex items-center gap-1 justify-center">
               <Navigation className="h-3 w-3" /> Popular Destinations
             </div>
             <div className="flex flex-wrap gap-2 justify-center">
@@ -198,7 +198,7 @@ export default function SakuraDashboard() {
                   className={`px-4 py-2 text-sm rounded-xl border transition-all ${
                     selectedCity.id === city.id
                       ? 'bg-pink-500 border-pink-500 text-white font-medium shadow-sm'
-                      : 'bg-white border-slate-200 text-slate-600 hover:bg-pink-50 hover:border-pink-200 hover:text-pink-700'
+                      : 'bg-white dark:bg-[#231c2a] border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:border-pink-200 hover:text-pink-700'
                   }`}
                 >
                   {city.name} <span className={`text-xs ml-1 ${selectedCity.id === city.id ? 'opacity-80' : 'opacity-60'}`}>{city.jpName}</span>
@@ -218,24 +218,24 @@ export default function SakuraDashboard() {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex flex-col gap-8"
               >
-                <div className="flex items-center justify-between border-b border-pink-200 pb-4">
-                  <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                <div className="flex items-center justify-between border-b border-pink-200 dark:border-pink-900/40 pb-4">
+                  <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
                     <MapPin className="h-6 w-6 text-pink-500" />
                     {selectedCity.name} <span className="text-slate-400 font-normal text-xl">({selectedCity.jpName})</span>
                   </h2>
                 </div>
 
                 {/* Tabs */}
-                <div className="flex items-center gap-6 border-b border-slate-200">
+                <div className="flex items-center gap-6 border-b border-slate-200 dark:border-slate-700">
                   <button
                     onClick={() => setActiveTab('current')}
-                    className={`pb-3 text-sm font-medium border-b-2 transition-colors ${activeTab === 'current' ? 'border-pink-500 text-pink-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}
+                    className={`pb-3 text-sm font-medium border-b-2 transition-colors ${activeTab === 'current' ? 'border-pink-500 text-pink-600' : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:border-slate-300'}`}
                   >
                     Current Forecast
                   </button>
                   <button
                     onClick={() => setActiveTab('history')}
-                    className={`pb-3 text-sm font-medium border-b-2 transition-colors ${activeTab === 'history' ? 'border-pink-500 text-pink-600' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}
+                    className={`pb-3 text-sm font-medium border-b-2 transition-colors ${activeTab === 'history' ? 'border-pink-500 text-pink-600' : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:border-slate-300'}`}
                   >
                     Prediction History
                   </button>
@@ -250,15 +250,15 @@ export default function SakuraDashboard() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden hover:shadow-md transition-shadow group flex flex-col relative"
+                      className="bg-white dark:bg-[#231c2a] rounded-2xl shadow-sm border border-pink-100 dark:border-pink-900/30 overflow-hidden hover:shadow-md transition-shadow group flex flex-col relative"
                     >
                       <div className="p-6 flex-1 flex flex-col">
                         <div className="flex items-start justify-between min-h-[56px] mb-4">
                           <div>
-                            <h3 className="text-lg font-medium text-slate-900 leading-tight">
+                            <h3 className="text-lg font-medium text-slate-900 dark:text-slate-100 leading-tight">
                               {forecast.source}
                             </h3>
-                            <div className="text-xs text-slate-400 mt-1">
+                            <div className="text-xs text-slate-400 dark:text-slate-500 mt-1">
                               Updated: {sakuraData.sourceUpdates[forecast.source as keyof typeof sakuraData.sourceUpdates]}
                             </div>
                           </div>
@@ -274,20 +274,20 @@ export default function SakuraDashboard() {
                         </div>
                         
                         <div className="space-y-4 mt-auto">
-                          <div className="bg-pink-50/50 rounded-xl p-4 border border-pink-100/50 group-hover:bg-pink-50 transition-colors">
+                          <div className="bg-pink-50/50 dark:bg-pink-950/30 rounded-xl p-4 border border-pink-100/50 dark:border-pink-900/30 group-hover:bg-pink-50 dark:group-hover:bg-pink-950/50 transition-colors">
                             <div className="flex items-center gap-2 text-sm text-pink-600 mb-1 font-medium">
                               <span className="text-lg">🌸</span> Flowering (開花)
                             </div>
-                            <div className="text-2xl font-semibold text-slate-900">
+                            <div className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
                               {forecast.current.floweringDate}
                             </div>
                           </div>
                           
-                          <div className="bg-pink-50/50 rounded-xl p-4 border border-pink-100/50 group-hover:bg-pink-50 transition-colors">
+                          <div className="bg-pink-50/50 dark:bg-pink-950/30 rounded-xl p-4 border border-pink-100/50 dark:border-pink-900/30 group-hover:bg-pink-50 dark:group-hover:bg-pink-950/50 transition-colors">
                             <div className="flex items-center gap-2 text-sm text-pink-600 mb-1 font-medium">
                               <span className="text-lg">💮</span> Full Bloom (満開)
                             </div>
-                            <div className="text-2xl font-semibold text-slate-900">
+                            <div className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
                               {forecast.current.fullBloomDate}
                             </div>
                           </div>
@@ -300,11 +300,11 @@ export default function SakuraDashboard() {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-2xl shadow-sm border border-pink-100 p-6 overflow-hidden"
+                    className="bg-white dark:bg-[#231c2a] rounded-2xl shadow-sm border border-pink-100 dark:border-pink-900/30 p-6 overflow-hidden"
                   >
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm text-left">
-                        <thead className="text-xs text-slate-500 uppercase bg-slate-50 border-b border-slate-100">
+                        <thead className="text-xs text-slate-500 dark:text-slate-400 uppercase bg-slate-50 dark:bg-slate-800/60 border-b border-slate-100 dark:border-slate-700">
                           <tr>
                             <th className="px-6 py-4 font-medium">Source</th>
                             <th className="px-6 py-4 font-medium">Update Date</th>
@@ -312,16 +312,16 @@ export default function SakuraDashboard() {
                             <th className="px-6 py-4 font-medium">Full Bloom</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-100">
+                        <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
                           {selectedCity.forecasts.flatMap((f: any) => 
                             (f.history || []).map((h: any, i: number) => (
-                              <tr key={`${f.source}-${i}`} className="hover:bg-slate-50/50 transition-colors">
-                                <td className="px-6 py-4 font-medium text-slate-900">
+                              <tr key={`${f.source}-${i}`} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
+                                <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-100">
                                   {i === 0 ? f.source : ''}
                                 </td>
-                                <td className="px-6 py-4 text-slate-600">{h.date}</td>
-                                <td className="px-6 py-4 text-slate-600">{h.floweringDate}</td>
-                                <td className="px-6 py-4 text-slate-600">{h.fullBloomDate}</td>
+                                <td className="px-6 py-4 text-slate-600 dark:text-slate-400">{h.date}</td>
+                                <td className="px-6 py-4 text-slate-600 dark:text-slate-400">{h.floweringDate}</td>
+                                <td className="px-6 py-4 text-slate-600 dark:text-slate-400">{h.fullBloomDate}</td>
                               </tr>
                             ))
                           )}
@@ -336,17 +336,17 @@ export default function SakuraDashboard() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="bg-white rounded-2xl shadow-sm border border-pink-100 p-6 sm:p-8"
+                  className="bg-white dark:bg-[#231c2a] rounded-2xl shadow-sm border border-pink-100 dark:border-pink-900/30 p-6 sm:p-8"
                 >
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
                     <Map className="h-5 w-5 text-pink-500" />
                     Recommended Spots in {selectedCity.name}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {selectedCity.spots.map((spot, idx) => (
-                      <div key={idx} className="flex flex-col p-4 rounded-xl bg-pink-50/30 border border-pink-100 hover:border-pink-300 hover:bg-pink-50 transition-colors">
-                        <span className="font-medium text-slate-900">{spot.name}</span>
-                        <span className="text-sm text-slate-500 mt-1">{spot.jpName}</span>
+                      <div key={idx} className="flex flex-col p-4 rounded-xl bg-pink-50/30 dark:bg-pink-950/20 border border-pink-100 dark:border-pink-900/30 hover:border-pink-300 dark:hover:border-pink-700 hover:bg-pink-50 dark:hover:bg-pink-950/40 transition-colors">
+                        <span className="font-medium text-slate-900 dark:text-slate-100">{spot.name}</span>
+                        <span className="text-sm text-slate-500 dark:text-slate-400 mt-1">{spot.jpName}</span>
                       </div>
                     ))}
                   </div>
@@ -358,18 +358,18 @@ export default function SakuraDashboard() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="bg-white rounded-2xl shadow-sm border border-pink-100 p-6 sm:p-8"
+                    className="bg-white dark:bg-[#231c2a] rounded-2xl shadow-sm border border-pink-100 dark:border-pink-900/30 p-6 sm:p-8"
                   >
                     <div className="mb-8">
-                      <h3 className="text-xl font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                      <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
                         <span className="text-2xl">🗓️</span> Best Viewing Period Calendar
                       </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed max-w-3xl">
+                      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-3xl">
                         The highlighted dates show the estimated best viewing period for each source, calculated from the <strong>flowering date</strong> to <strong>5 days after full bloom</strong>. 
                       </p>
                       <div className="flex flex-wrap gap-6 mt-5">
                         {selectedCity.forecasts.map(s => (
-                          <div key={s.source} className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                          <div key={s.source} className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
                             <div className={`w-4 h-4 rounded-full ${SOURCE_COLORS[s.source] || 'bg-pink-400'}`}></div>
                             {s.source}
                           </div>
@@ -384,13 +384,13 @@ export default function SakuraDashboard() {
                         { month: 4, name: 'May', days: 31, startDay: new Date(2026, 4, 1).getDay() }
                       ].map(m => (
                         <div key={m.name} className="flex flex-col">
-                          <h4 className="text-lg font-medium text-slate-800 mb-4 text-center">{m.name} 2026</h4>
-                          <div className="grid grid-cols-7 gap-1 mb-2 text-center text-xs font-medium text-slate-400 uppercase tracking-wider">
+                          <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200 mb-4 text-center">{m.name} 2026</h4>
+                          <div className="grid grid-cols-7 gap-1 mb-2 text-center text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
                             <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
                           </div>
                           <div className="grid grid-cols-7 gap-1">
                             {Array.from({ length: m.startDay }).map((_, i) => (
-                              <div key={`empty-${i}`} className="aspect-square rounded-lg bg-slate-50"></div>
+                              <div key={`empty-${i}`} className="aspect-square rounded-lg bg-slate-50 dark:bg-slate-800/30"></div>
                             ))}
                             {Array.from({ length: m.days }).map((_, i) => {
                               const day = i + 1;
@@ -402,8 +402,8 @@ export default function SakuraDashboard() {
                               });
                               
                               return (
-                                <div key={day} className="aspect-square rounded-lg border border-slate-100 p-1 relative flex flex-col items-center justify-start bg-white overflow-hidden">
-                                  <span className={`text-xs z-10 ${activePeriods.length > 0 ? 'text-slate-900 font-semibold' : 'text-slate-500'}`}>
+                                <div key={day} className="aspect-square rounded-lg border border-slate-100 dark:border-slate-700 p-1 relative flex flex-col items-center justify-start bg-white dark:bg-[#2a2335] overflow-hidden">
+                                  <span className={`text-xs z-10 ${activePeriods.length > 0 ? 'text-slate-900 dark:text-slate-100 font-semibold' : 'text-slate-500 dark:text-slate-500'}`}>
                                     {day}
                                   </span>
                                   <div className="absolute bottom-1 left-1 right-1 flex flex-col gap-[2px]">

@@ -73,10 +73,10 @@ function DiffBadge({ value, unit, earlierLabel, laterLabel, labelFirst = false }
   const isEarly = num < 0;
   const isLate = num > 0;
   const cls = isEarly
-    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+    ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800'
     : isLate
-    ? 'bg-red-50 text-red-700 border-red-200'
-    : 'bg-slate-50 text-slate-500 border-slate-200';
+    ? 'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800'
+    : 'bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-600';
   const label = isEarly ? earlierLabel : isLate ? laterLabel : '±0';
   const arrow = isEarly ? '▲' : isLate ? '▼' : '';
   return (
@@ -210,10 +210,10 @@ export default function CitySearch() {
 
     return (
       <div className="flex-1 min-w-[250px]">
-        <h4 className="text-center font-semibold text-slate-800 mb-4 text-lg">{year} {monthName}</h4>
+        <h4 className="text-center font-semibold text-slate-800 dark:text-slate-200 mb-4 text-lg">{year} {monthName}</h4>
         <div className="grid grid-cols-7 gap-1 text-center text-xs mb-2">
           {['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'].map(d => (
-            <div key={d} className="text-slate-400 font-medium">{d}</div>
+            <div key={d} className="text-slate-400 dark:text-slate-500 font-medium">{d}</div>
           ))}
         </div>
         <div className="grid grid-cols-7 gap-y-3 gap-x-1 text-center text-sm">
@@ -229,7 +229,7 @@ export default function CitySearch() {
 
             return (
               <div key={day} className="h-10 flex flex-col items-center justify-start relative group">
-                <span className={`z-10 w-7 h-7 flex items-center justify-center rounded-full ${hasAny ? 'font-semibold text-slate-800' : 'text-slate-600'}`}>
+                <span className={`z-10 w-7 h-7 flex items-center justify-center rounded-full ${hasAny ? 'font-semibold text-slate-800 dark:text-slate-100' : 'text-slate-600 dark:text-slate-400'}`}>
                   {day}
                 </span>
                 <div className="absolute bottom-0 w-full flex flex-col gap-[2px] px-1.5">
@@ -263,16 +263,16 @@ export default function CitySearch() {
               onFocus={() => setIsDropdownOpen(true)}
               onBlur={() => setTimeout(() => setIsDropdownOpen(false), 200)}
               placeholder={t('searchPlaceholder')}
-              className="block w-full pl-11 pr-4 py-4 text-lg border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 rounded-2xl bg-white shadow-sm text-slate-900 transition-shadow hover:shadow-md"
+              className="block w-full pl-11 pr-4 py-4 text-lg border border-pink-200 dark:border-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 rounded-2xl bg-white dark:bg-[#231c2a] shadow-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-shadow hover:shadow-md"
             />
             <Search className="absolute right-4 h-5 w-5 text-slate-400" />
           </div>
 
           {/* Autocomplete Dropdown */}
           {isDropdownOpen && searchQuery && (
-            <div className="absolute w-full mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden max-h-80 overflow-y-auto">
+            <div className="absolute w-full mt-2 bg-white dark:bg-[#231c2a] rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden max-h-80 overflow-y-auto">
               {filteredCities.length === 0 ? (
-                <div className="p-4 text-center text-slate-500">{t('noSearchFound')}</div>
+                <div className="p-4 text-center text-slate-500 dark:text-slate-400">{t('noSearchFound')}</div>
               ) : (
                 <ul className="py-2">
                   {filteredCities.map(city => (
@@ -283,10 +283,10 @@ export default function CitySearch() {
                           setSearchQuery('');
                           setIsDropdownOpen(false);
                         }}
-                        className="w-full text-left px-4 py-3 hover:bg-pink-50 flex items-center justify-between transition-colors"
+                        className="w-full text-left px-4 py-3 hover:bg-pink-50 dark:hover:bg-pink-900/20 flex items-center justify-between transition-colors"
                       >
-                        <span className="font-medium text-slate-900">{city.name}</span>
-                        <span className="text-sm text-slate-500">{city.jpName}</span>
+                        <span className="font-medium text-slate-900 dark:text-slate-100">{city.name}</span>
+                        <span className="text-sm text-slate-500 dark:text-slate-400">{city.jpName}</span>
                       </button>
                     </li>
                   ))}
@@ -298,7 +298,7 @@ export default function CitySearch() {
 
         {/* Quick Select Chips */}
         <div className="mt-4 flex flex-wrap gap-2 items-center">
-          <div className="text-sm font-medium text-slate-400 mr-2">
+          <div className="text-sm font-medium text-slate-400 dark:text-slate-500 mr-2">
             {t('popular')}
           </div>
           {availableCities.filter(c => POPULAR_CITY_IDS.includes(c.id)).map((city) => (
@@ -308,7 +308,7 @@ export default function CitySearch() {
               className={`px-4 py-1.5 text-sm rounded-full border transition-all ${
                 selectedCityId === city.id
                   ? 'bg-pink-500 border-pink-500 text-white font-medium shadow-sm'
-                  : 'bg-white border-slate-200 text-slate-600 hover:bg-pink-50 hover:border-pink-200 hover:text-pink-700'
+                  : 'bg-white dark:bg-[#231c2a] border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:border-pink-200 hover:text-pink-700'
               }`}
             >
               {language === 'zh' || language === 'ja' ? city.jpName : city.name}
@@ -327,7 +327,7 @@ export default function CitySearch() {
 
             if (!hasAny) {
               return (
-                <div className="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100 text-slate-500">
+                <div className="text-center py-20 bg-white dark:bg-[#231c2a] rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 text-slate-500 dark:text-slate-400">
                   {liveReport ? t('liveDefaultEmpty') : t('pleaseSearch')}
                 </div>
               );
@@ -341,7 +341,7 @@ export default function CitySearch() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                   </span>
-                  <h2 className="text-lg font-bold text-emerald-800">{t('liveDefaultTitle')}</h2>
+                  <h2 className="text-lg font-bold text-emerald-800 dark:text-emerald-400">{t('liveDefaultTitle')}</h2>
                 </div>
 
                 {/* Flowering Cards */}
@@ -349,22 +349,22 @@ export default function CitySearch() {
                   <div>
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-xl">🌸</span>
-                      <h3 className="text-base font-semibold text-slate-700">{t('liveDefaultFlowering')}</h3>
-                      <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{flowering.length}</span>
+                      <h3 className="text-base font-semibold text-slate-700 dark:text-slate-300">{t('liveDefaultFlowering')}</h3>
+                      <span className="text-xs text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">{flowering.length}</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {flowering.map(city => (
                         <button
                           key={city.id}
                           onClick={() => setSelectedCityId(city.id)}
-                          className="text-left bg-white border border-emerald-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all group"
+                          className="text-left bg-white dark:bg-[#231c2a] border border-emerald-100 dark:border-emerald-900/40 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-emerald-300 dark:hover:border-emerald-700 transition-all group"
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div>
-                              <div className="font-bold text-slate-900 text-lg group-hover:text-emerald-700 transition-colors">
+                              <div className="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                                 {language === 'en' ? city.name : city.jpName}
                               </div>
-                              <div className="text-xs text-slate-400">{city.region}</div>
+                              <div className="text-xs text-slate-400 dark:text-slate-500">{city.region}</div>
                             </div>
                             <span className="text-2xl font-bold text-pink-500">{city.date}</span>
                           </div>
@@ -384,7 +384,7 @@ export default function CitySearch() {
                               labelFirst={language === 'zh'}
                             />
                           </div>
-                          <div className="text-xs text-emerald-600 font-medium">{t('liveDefaultClickHint')} →</div>
+                          <div className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">{t('liveDefaultClickHint')} →</div>
                         </button>
                       ))}
                     </div>
@@ -396,22 +396,22 @@ export default function CitySearch() {
                   <div>
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-xl">💮</span>
-                      <h3 className="text-base font-semibold text-slate-700">{t('liveDefaultFullBloom')}</h3>
-                      <span className="text-xs text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{fullBloom.length}</span>
+                      <h3 className="text-base font-semibold text-slate-700 dark:text-slate-300">{t('liveDefaultFullBloom')}</h3>
+                      <span className="text-xs text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">{fullBloom.length}</span>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {fullBloom.map(city => (
                         <button
                           key={city.id}
                           onClick={() => setSelectedCityId(city.id)}
-                          className="text-left bg-white border border-pink-100 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-pink-300 transition-all group"
+                          className="text-left bg-white dark:bg-[#231c2a] border border-pink-100 dark:border-pink-900/30 rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-pink-300 dark:hover:border-pink-700 transition-all group"
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div>
-                              <div className="font-bold text-slate-900 text-lg group-hover:text-pink-700 transition-colors">
+                              <div className="font-bold text-slate-900 dark:text-slate-100 text-lg group-hover:text-pink-700 dark:group-hover:text-pink-400 transition-colors">
                                 {language === 'en' ? city.name : city.jpName}
                               </div>
-                              <div className="text-xs text-slate-400">{city.region}</div>
+                              <div className="text-xs text-slate-400 dark:text-slate-500">{city.region}</div>
                             </div>
                             <span className="text-2xl font-bold text-pink-500">{city.date}</span>
                           </div>
@@ -431,7 +431,7 @@ export default function CitySearch() {
                               labelFirst={language === 'zh'}
                             />
                           </div>
-                          <div className="text-xs text-pink-600 font-medium">{t('liveDefaultClickHint')} →</div>
+                          <div className="text-xs text-pink-600 dark:text-pink-400 font-medium">{t('liveDefaultClickHint')} →</div>
                         </button>
                       ))}
                     </div>
@@ -444,12 +444,12 @@ export default function CitySearch() {
       ) : (
         <div className="animate-in slide-in-from-bottom-4 duration-500">
           <div className="mb-8 flex items-center gap-3 flex-wrap">
-            <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-2">
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               {selectedCityData?.name || t('loading')} <span className="text-2xl text-slate-400 font-medium">({selectedCityData?.jpName || ""})</span>
             </h1>
             <button
               onClick={() => { setSelectedCityId(""); setSelectedCityData(null); }}
-              className="ml-auto flex items-center gap-1.5 px-3 py-1.5 text-sm text-slate-500 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:border-slate-300 hover:text-slate-700 transition-all"
+              className="ml-auto flex items-center gap-1.5 px-3 py-1.5 text-sm text-slate-500 dark:text-slate-400 bg-white dark:bg-[#231c2a] border border-slate-200 dark:border-slate-700 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 hover:text-slate-700 dark:hover:text-slate-200 transition-all"
               title="Clear selection"
             >
               <span className="text-base leading-none">✕</span>
@@ -464,28 +464,28 @@ export default function CitySearch() {
             const hasFullBloom = entries.some(e => e.fullBloom);
             if (!hasFlowering && !hasFullBloom) return null;
             return (
-              <div className="mb-8 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6 shadow-sm">
+              <div className="mb-8 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                   </span>
-                  <h2 className="text-base font-bold text-emerald-800">{t('liveAnnouncementTitle')}</h2>
-                  <span className="ml-auto text-xs text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">
+                  <h2 className="text-base font-bold text-emerald-800 dark:text-emerald-400">{t('liveAnnouncementTitle')}</h2>
+                  <span className="ml-auto text-xs text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
                     {selectedCityData.liveData!.lastUpdated}
                   </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {hasFlowering && entries.filter(e => e.flowering).map((entry, i) => (
-                    <div key={`f-${i}`} className="bg-white/80 rounded-xl p-4 border border-emerald-100">
+                    <div key={`f-${i}`} className="bg-white/80 dark:bg-[#2a2335]/80 rounded-xl p-4 border border-emerald-100 dark:border-emerald-900/40">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-lg">🌸</span>
-                        <span className="text-sm font-semibold text-emerald-800">{t('liveAnnouncedFlowering')}</span>
+                        <span className="text-sm font-semibold text-emerald-800 dark:text-emerald-400">{t('liveAnnouncedFlowering')}</span>
                         <a href={entry.url} target="_blank" rel="noopener noreferrer" className="ml-auto text-emerald-400 hover:text-emerald-600 transition-colors">
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       </div>
-                      <div className="text-3xl font-bold text-slate-900 mb-3">{entry.flowering}</div>
+                      <div className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-3">{entry.flowering}</div>
                       <div className="flex flex-wrap gap-2">
                         <DiffBadge
                           value={entry.floweringVsAllYears}
@@ -502,7 +502,7 @@ export default function CitySearch() {
                           labelFirst={language === 'zh'}
                         />
                       </div>
-                      <div className="mt-2 flex gap-2 text-[10px] text-slate-400">
+                      <div className="mt-2 flex gap-2 text-[10px] text-slate-400 dark:text-slate-500">
                         {entry.floweringVsAllYears && <span>{t('liveColVsNormal')}</span>}
                         {entry.floweringVsAllYears && entry.floweringVsLastYear && <span>·</span>}
                         {entry.floweringVsLastYear && <span>{t('liveColVsLastYear')}</span>}
@@ -510,15 +510,15 @@ export default function CitySearch() {
                     </div>
                   ))}
                   {hasFullBloom && entries.filter(e => e.fullBloom).map((entry, i) => (
-                    <div key={`fb-${i}`} className="bg-white/80 rounded-xl p-4 border border-emerald-100">
+                    <div key={`fb-${i}`} className="bg-white/80 dark:bg-[#2a2335]/80 rounded-xl p-4 border border-emerald-100 dark:border-emerald-900/40">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="text-lg">💮</span>
-                        <span className="text-sm font-semibold text-emerald-800">{t('liveAnnouncedFullBloom')}</span>
+                        <span className="text-sm font-semibold text-emerald-800 dark:text-emerald-400">{t('liveAnnouncedFullBloom')}</span>
                         <a href={entry.url} target="_blank" rel="noopener noreferrer" className="ml-auto text-emerald-400 hover:text-emerald-600 transition-colors">
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       </div>
-                      <div className="text-3xl font-bold text-slate-900 mb-3">{entry.fullBloom}</div>
+                      <div className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-3">{entry.fullBloom}</div>
                       <div className="flex flex-wrap gap-2">
                         <DiffBadge
                           value={entry.fullBloomVsAllYears}
@@ -535,6 +535,11 @@ export default function CitySearch() {
                           labelFirst={language === 'zh'}
                         />
                       </div>
+                      <div className="mt-2 flex gap-2 text-[10px] text-slate-400 dark:text-slate-500">
+                        {entry.fullBloomVsAllYears && <span>{t('liveColVsNormal')}</span>}
+                        {entry.fullBloomVsAllYears && entry.fullBloomVsLastYear && <span>·</span>}
+                        {entry.fullBloomVsLastYear && <span>{t('liveColVsLastYear')}</span>}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -545,28 +550,28 @@ export default function CitySearch() {
           {/* Forecast Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {/* Weather Map */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div className="bg-white dark:bg-[#231c2a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex justify-between items-start min-h-[56px] mb-4">
-                <h3 className="font-semibold text-slate-800 text-lg leading-tight">Weather Map</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-lg leading-tight">Weather Map</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
                 <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
                 <span>{selectedCityData?.lastUpdated?.weatherMap || '-'}</span>
               </div>
               <div className="space-y-4">
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span>🌸</span> {t('flowering')} {t('floweringSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.weathermap?.flowering || '-'}
                   </div>
                 </div>
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span className="text-pink-400">💮</span> {t('fullBloom')} {t('fullBloomSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.weathermap?.fullBloom || '-'}
                   </div>
                 </div>
@@ -574,28 +579,28 @@ export default function CitySearch() {
             </div>
 
             {/* Weathernews */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div className="bg-white dark:bg-[#231c2a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex justify-between items-start min-h-[56px] mb-4">
-                <h3 className="font-semibold text-slate-800 text-lg leading-tight">Weathernews</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-lg leading-tight">Weathernews</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
                 <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
                 <span>{selectedCityData?.lastUpdated?.weathernews || '-'}</span>
               </div>
               <div className="space-y-4">
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span>🌸</span> {t('flowering')} {t('floweringSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.weathernews?.flowering || '-'}
                   </div>
                 </div>
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span className="text-pink-400">💮</span> {t('fullBloom')} {t('fullBloomSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.weathernews?.fullBloom || '-'}
                   </div>
                 </div>
@@ -603,28 +608,28 @@ export default function CitySearch() {
             </div>
 
             {/* Japan Meteorological Corp */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div className="bg-white dark:bg-[#231c2a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex justify-between items-start min-h-[56px] mb-4">
-                <h3 className="font-semibold text-slate-800 text-lg leading-tight">Japan Meteorological<br/>Corp</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-lg leading-tight">Japan Meteorological<br/>Corp</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
                 <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
                 <span>{selectedCityData?.lastUpdated?.japanMeteorologicalCorp || '-'}</span>
               </div>
               <div className="space-y-4">
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span>🌸</span> {t('flowering')} {t('floweringSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.jmc?.flowering || '-'}
                   </div>
                 </div>
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span className="text-pink-400">💮</span> {t('fullBloom')} {t('fullBloomSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.jmc?.fullBloom || '-'}
                   </div>
                 </div>
@@ -632,28 +637,28 @@ export default function CitySearch() {
             </div>
 
             {/* tenki.jp */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+            <div className="bg-white dark:bg-[#231c2a] rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700">
               <div className="flex justify-between items-start min-h-[56px] mb-4">
-                <h3 className="font-semibold text-slate-800 text-lg leading-tight">tenki.jp</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-lg leading-tight">tenki.jp</h3>
               </div>
               <div className="text-xs text-slate-400 font-medium mb-4 flex items-center justify-between">
                 <span>{t('lastUpdatedLabel') || 'Updated'}:</span>
                 <span>{selectedCityData?.lastUpdated?.['tenki.jp'] || '-'}</span>
               </div>
               <div className="space-y-4">
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span>🌸</span> {t('flowering')} {t('floweringSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.tenki?.flowering || '-'}
                   </div>
                 </div>
-                <div className="bg-[#fff5f7] rounded-xl p-4 border border-pink-50">
+                <div className="bg-[#fff5f7] dark:bg-pink-950/20 rounded-xl p-4 border border-pink-50 dark:border-pink-900/20">
                   <div className="flex items-center gap-2 text-pink-600 text-sm font-medium mb-2">
                     <span className="text-pink-400">💮</span> {t('fullBloom')} {t('fullBloomSub')}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800">
+                  <div className="text-3xl font-bold text-slate-800 dark:text-slate-100">
                     {!selectedCityData ? '...' : cityData.tenki?.fullBloom || '-'}
                   </div>
                 </div>
@@ -663,16 +668,16 @@ export default function CitySearch() {
 
           {/* Recommended Spots */}
           {(RECOMMENDED_SPOTS[selectedCityId] || []).length > 0 && (
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 mb-8">
+            <div className="bg-white dark:bg-[#231c2a] rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-700 mb-8">
               <div className="flex items-center gap-3 mb-6">
                 <Map className="w-6 h-6 text-pink-500" />
-                <h2 className="text-2xl font-bold text-slate-900">{t('recommendedSpots')} {selectedCityData?.name || "..."}</h2>
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t('recommendedSpots')} {selectedCityData?.name || "..."}</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {RECOMMENDED_SPOTS[selectedCityId].map((spot, idx) => (
-                  <div key={idx} className="border border-slate-100 rounded-xl p-5 hover:border-pink-200 transition-colors bg-slate-50/50">
-                    <div className="font-semibold text-slate-800 text-lg mb-1">{spot.en}</div>
-                    <div className="text-sm text-slate-500">{spot.jp}</div>
+                  <div key={idx} className="border border-slate-100 dark:border-slate-700 rounded-xl p-5 hover:border-pink-200 dark:hover:border-pink-700 transition-colors bg-slate-50/50 dark:bg-slate-800/40">
+                    <div className="font-semibold text-slate-800 dark:text-slate-200 text-lg mb-1">{spot.en}</div>
+                    <div className="text-sm text-slate-500 dark:text-slate-400">{spot.jp}</div>
                   </div>
                 ))}
               </div>
@@ -680,33 +685,33 @@ export default function CitySearch() {
           )}
 
           {/* Best Viewing Period Calendar */}
-          <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+          <div className="bg-white dark:bg-[#231c2a] rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-700">
             <div className="flex items-center gap-3 mb-4">
               <Calendar className="w-6 h-6 text-slate-700" />
-              <h2 className="text-2xl font-bold text-slate-900">{t('calendarTitle')}</h2>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{t('calendarTitle')}</h2>
             </div>
             
-            <p className="text-slate-600 mb-6 max-w-3xl">
-              {t('calendarDesc')} <strong className="text-slate-800">{t('calendarDescBold1')}</strong> {t('calendarDescAnd')} <strong className="text-slate-800">{t('calendarDescBold2')}</strong>.
+            <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-3xl">
+              {t('calendarDesc')} <strong className="text-slate-800 dark:text-slate-200">{t('calendarDescBold1')}</strong> {t('calendarDescAnd')} <strong className="text-slate-800 dark:text-slate-200">{t('calendarDescBold2')}</strong>.
             </p>
 
             {/* Legend */}
             <div className="flex flex-wrap items-center gap-6 mb-10">
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-[#4A90E2]"></div>
-                <span className="text-sm font-medium text-slate-700">Weather Map</span>
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Weather Map</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-[#F5A623]"></div>
-                <span className="text-sm font-medium text-slate-700">Weathernews</span>
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Weathernews</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-[#2ECC71]"></div>
-                <span className="text-sm font-medium text-slate-700">Japan Meteorological Corp</span>
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Japan Meteorological Corp</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-4 rounded-full bg-[#9B59B6]"></div>
-                <span className="text-sm font-medium text-slate-700">tenki.jp</span>
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">tenki.jp</span>
               </div>
             </div>
 

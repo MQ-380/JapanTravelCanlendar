@@ -43,10 +43,10 @@ function DiffBadge({ value, unit, earlierLabel, laterLabel, labelFirst = false }
   const abs = Math.abs(num);
 
   const bgClass = isEarly
-    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+    ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800'
     : isLate
-    ? 'bg-red-50 text-red-700 border border-red-200'
-    : 'bg-slate-50 text-slate-500 border border-slate-200';
+    ? 'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800'
+    : 'bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600';
 
   const label = isEarly ? earlierLabel : isLate ? laterLabel : '±0';
   const arrow = isEarly ? '▲' : isLate ? '▼' : '';
@@ -71,8 +71,8 @@ function LiveTable({
 }) {
   if (rows.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 text-center">
-        <p className="text-slate-400 font-medium">{t('liveNoData')}</p>
+      <div className="bg-white dark:bg-[#231c2a] rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm p-8 text-center">
+        <p className="text-slate-400 dark:text-slate-500 font-medium">{t('liveNoData')}</p>
       </div>
     );
   }
@@ -81,7 +81,7 @@ function LiveTable({
 
   return (
     <div>
-      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+      <div className="bg-white dark:bg-[#231c2a] rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden transition-colors duration-200">
         <div className="overflow-x-auto">
           <table className="w-full text-sm text-left table-fixed">
             <colgroup>
@@ -91,41 +91,41 @@ function LiveTable({
               <col className="w-[18%]" />
               <col className="w-[17%]" />
             </colgroup>
-            <thead className="bg-pink-50/60 border-b border-pink-100">
+            <thead className="bg-pink-50/60 dark:bg-pink-950/40 border-b border-pink-100 dark:border-pink-900/30">
               <tr>
-                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColCity')}</th>
-                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider hidden sm:table-cell">{t('liveColRegion')}</th>
-                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColDate')}</th>
-                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColVsNormal')}</th>
-                <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider">{t('liveColVsLastYear')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-slate-400 text-xs uppercase tracking-wider">{t('liveColCity')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-slate-400 text-xs uppercase tracking-wider hidden sm:table-cell">{t('liveColRegion')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-slate-400 text-xs uppercase tracking-wider">{t('liveColDate')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-slate-400 text-xs uppercase tracking-wider">{t('liveColVsNormal')}</th>
+                <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-slate-400 text-xs uppercase tracking-wider">{t('liveColVsLastYear')}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-50">
+            <tbody className="divide-y divide-slate-50 dark:divide-slate-700/50">
               {rows.map((row, idx) => (
                 <motion.tr
                   key={`${row.id}-${row.source}-${idx}`}
                   initial={{ opacity: 0, x: -4 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.03 }}
-                  className="hover:bg-pink-50/30 transition-colors"
+                  className="hover:bg-pink-50/30 dark:hover:bg-pink-950/20 transition-colors"
                 >
                   <td className="px-5 py-3.5">
                     <div className="flex flex-col">
-                      <span className="font-semibold text-slate-900">
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">
                         {language === 'en' ? row.name : row.jpName}
                       </span>
                       {language === 'en' && (
-                        <span className="text-xs text-slate-400">{row.jpName}</span>
+                        <span className="text-xs text-slate-400 dark:text-slate-500">{row.jpName}</span>
                       )}
                     </div>
                   </td>
-                  <td className="px-5 py-3.5 text-slate-500 hidden sm:table-cell">
-                    <span className="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-md text-xs font-medium">
+                  <td className="px-5 py-3.5 text-slate-500 dark:text-slate-400 hidden sm:table-cell">
+                    <span className="px-2 py-0.5 bg-slate-50 dark:bg-slate-700 border border-slate-100 dark:border-slate-600 rounded-md text-xs font-medium">
                       {row.region}
                     </span>
                   </td>
                   <td className="px-5 py-3.5">
-                    <span className="font-semibold text-pink-600 text-base">{row.date}</span>
+                    <span className="font-semibold text-pink-600 dark:text-pink-400 text-base">{row.date}</span>
                   </td>
                   <td className="px-5 py-3.5">
                     <DiffBadge
@@ -151,7 +151,6 @@ function LiveTable({
           </table>
         </div>
       </div>
-      {/* Single source attribution */}
       {sourceRow && (
         <div className="mt-2 flex justify-end">
           <a
@@ -191,17 +190,17 @@ export default function LiveReportPage() {
     <div className="max-w-6xl mx-auto px-4 py-8 animate-in fade-in duration-500">
       {/* Page Header */}
       <div className="mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full font-medium text-sm mb-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full font-medium text-sm mb-4">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           {t('navLive')}
         </div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">{t('livePageTitle')}</h1>
-        <p className="text-slate-500 text-md sm:text-lg">{t('livePageDesc')}</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-3">{t('livePageTitle')}</h1>
+        <p className="text-slate-500 dark:text-slate-400 text-md sm:text-lg">{t('livePageDesc')}</p>
         {liveData?.lastUpdated && (
-          <div className="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">
+          <div className="mt-4 inline-flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-100 dark:border-slate-700">
             <span className="font-semibold">{t('lastUpdatedLabel')}:</span>
             <span>{liveData.lastUpdated}</span>
           </div>
@@ -210,19 +209,19 @@ export default function LiveReportPage() {
           <div className="mt-5 flex gap-3">
             <a
               href="#flowering"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-pink-300 hover:text-pink-600 transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#231c2a] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-pink-300 dark:hover:border-pink-700 hover:text-pink-600 dark:hover:text-pink-400 transition-all shadow-sm"
             >
               <span>🌸</span>
               {t('liveFloweringTable')}
-              <span className="text-xs text-slate-400 font-normal">({liveData?.flowering.length ?? 0})</span>
+              <span className="text-xs text-slate-400 dark:text-slate-500 font-normal">({liveData?.flowering.length ?? 0})</span>
             </a>
             <a
               href="#fullbloom"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-pink-300 hover:text-pink-600 transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#231c2a] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-pink-300 dark:hover:border-pink-700 hover:text-pink-600 dark:hover:text-pink-400 transition-all shadow-sm"
             >
               <span>💮</span>
               {t('liveFullBloomTable')}
-              <span className="text-xs text-slate-400 font-normal">({liveData?.fullBloom.length ?? 0})</span>
+              <span className="text-xs text-slate-400 dark:text-slate-500 font-normal">({liveData?.fullBloom.length ?? 0})</span>
             </a>
           </div>
         )}
@@ -243,8 +242,8 @@ export default function LiveReportPage() {
           >
             <div className="flex items-center gap-3 mb-4">
               <span className="text-2xl">🌸</span>
-              <h2 className="text-xl font-bold text-slate-800">{t('liveFloweringTable')}</h2>
-              <span className="ml-auto text-xs text-slate-400 font-medium bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100">
+              <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">{t('liveFloweringTable')}</h2>
+              <span className="ml-auto text-xs text-slate-400 dark:text-slate-500 font-medium bg-slate-50 dark:bg-slate-800/60 px-2.5 py-1 rounded-full border border-slate-100 dark:border-slate-700">
                 {liveData?.flowering.length ?? 0} {t('liveColCity')}
               </span>
             </div>
@@ -265,8 +264,8 @@ export default function LiveReportPage() {
           >
             <div className="flex items-center gap-3 mb-4">
               <span className="text-2xl">💮</span>
-              <h2 className="text-xl font-bold text-slate-800">{t('liveFullBloomTable')}</h2>
-              <span className="ml-auto text-xs text-slate-400 font-medium bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100">
+              <h2 className="text-xl font-bold text-slate-800 dark:text-slate-200">{t('liveFullBloomTable')}</h2>
+              <span className="ml-auto text-xs text-slate-400 dark:text-slate-500 font-medium bg-slate-50 dark:bg-slate-800/60 px-2.5 py-1 rounded-full border border-slate-100 dark:border-slate-700">
                 {liveData?.fullBloom.length ?? 0} {t('liveColCity')}
               </span>
             </div>

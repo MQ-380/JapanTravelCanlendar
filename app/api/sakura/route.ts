@@ -71,16 +71,21 @@ export async function GET(request: Request) {
         const liveCity = liveJson.cities.find((c: any) => c.id === cityId);
         if (liveCity) {
           // Flatten live entries
-          const entries = liveCity.lives.map((live: any) => ({
-            source: live.source,
-            url: live.url,
-            flowering: live.current?.floweringDate ?? null,
-            floweringVsAllYears: live.current?.comparedWithAllYears ?? null,
-            floweringVsLastYear: live.current?.comparedWithLastYear ?? null,
-            fullBloom: live.current?.fullBloomDate ?? null,
-            fullBloomVsAllYears: live.current?.fullBloomComparedWithAllYears ?? null,
-            fullBloomVsLastYear: live.current?.fullBloomComparedWithLastYear ?? null,
-          }));
+          const entries = liveCity.lives.map((live: any) => {
+            const c = live.current ?? {};
+            const hasFlowering = !!c.floweringDate;
+            const hasFullBloom = !!c.fullBloomDate;
+            return {
+              source: live.source,
+              url: live.url,
+              flowering: c.floweringDate ?? null,
+              floweringVsAllYears: hasFlowering ? (c.comparedWithAllYears ?? null) : null,
+              floweringVsLastYear: hasFlowering ? (c.comparedWithLastYear ?? null) : null,
+              fullBloom: c.fullBloomDate ?? null,
+              fullBloomVsAllYears: hasFullBloom && !hasFlowering ? (c.comparedWithAllYears ?? null) : null,
+              fullBloomVsLastYear: hasFullBloom && !hasFlowering ? (c.comparedWithLastYear ?? null) : null,
+            };
+          });
           liveData = { lastUpdated: liveJson.lastUpdated, entries };
         }
       } catch {
