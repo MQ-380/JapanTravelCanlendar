@@ -1,9 +1,9 @@
 {
   "lastUpdated": {
-    "weatherMap": "2026-04-03",
+    "weatherMap": "2026-04-04",
     "weathernews": "2026-03-31",
-    "japanMeteorologicalCorp": "2026-04-03",
-    "tenki.jp": "2026-04-03"
+    "japanMeteorologicalCorp": "2026-04-04",
+    "tenki.jp": "2026-04-04"
   },
   "cities": [
     {
@@ -257,7 +257,7 @@
           "url": "https://sakura.weathermap.jp/",
           "current": {
             "floweringDate": "3/31",
-            "fullBloomDate": "4/5"
+            "fullBloomDate": "4/4"
           }
         },
         {
@@ -273,7 +273,7 @@
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
             "floweringDate": "3/31",
-            "fullBloomDate": "4/5"
+            "fullBloomDate": "4/4"
           }
         },
         {
@@ -281,7 +281,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/31",
-            "fullBloomDate": "04/05"
+            "fullBloomDate": "04/04"
           }
         }
       ]
@@ -1201,7 +1201,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/27",
-            "fullBloomDate": "04/04"
+            "fullBloomDate": "04/05"
           }
         }
       ]
@@ -1457,7 +1457,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/24",
-            "fullBloomDate": "04/04"
+            "fullBloomDate": "04/05"
           }
         }
       ]
@@ -1497,7 +1497,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/28",
-            "fullBloomDate": "04/04"
+            "fullBloomDate": "04/05"
           }
         }
       ]
@@ -1553,7 +1553,7 @@
           "url": "https://sakura.weathermap.jp/",
           "current": {
             "floweringDate": "3/24",
-            "fullBloomDate": "4/3"
+            "fullBloomDate": "4/4"
           }
         },
         {
@@ -1569,7 +1569,7 @@
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
             "floweringDate": "3/24",
-            "fullBloomDate": "4/3"
+            "fullBloomDate": "4/4"
           }
         },
         {
@@ -1697,7 +1697,7 @@
           "url": "https://tenki.jp/sakura/expectation/",
           "current": {
             "floweringDate": "03/24",
-            "fullBloomDate": "04/04"
+            "fullBloomDate": "04/05"
           }
         }
       ]
