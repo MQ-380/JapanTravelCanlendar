@@ -1,8 +1,8 @@
 {
   "lastUpdated": {
-    "weatherMap": "2026-04-05",
-    "weathernews": "2026-04-05",
-    "japanMeteorologicalCorp": "2026-04-05",
+    "weatherMap": "2026-04-06",
+    "weathernews": "2026-04-06",
+    "japanMeteorologicalCorp": "2026-04-06",
     "tenki.jp": "2026-04-05"
   },
   "cities": [
@@ -184,7 +184,7 @@
           "source": "Weathernews",
           "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
           "current": {
-            "floweringDate": "4/8",
+            "floweringDate": "4/6",
             "fullBloomDate": "4/17"
           }
         },
@@ -192,7 +192,7 @@
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
-            "floweringDate": "4/7",
+            "floweringDate": "4/6",
             "fullBloomDate": "4/11"
           }
         },
@@ -297,7 +297,7 @@
           "url": "https://sakura.weathermap.jp/",
           "current": {
             "floweringDate": "4/2",
-            "fullBloomDate": "4/5"
+            "fullBloomDate": "4/6"
           }
         },
         {
@@ -313,7 +313,7 @@
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
             "floweringDate": "4/2",
-            "fullBloomDate": "4/7"
+            "fullBloomDate": "4/6"
           }
         },
         {
@@ -673,7 +673,7 @@
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
             "floweringDate": "3/31",
-            "fullBloomDate": "4/5"
+            "fullBloomDate": "4/6"
           }
         },
         {
@@ -1473,7 +1473,7 @@
           "url": "https://sakura.weathermap.jp/",
           "current": {
             "floweringDate": "3/28",
-            "fullBloomDate": "4/3"
+            "fullBloomDate": "4/6"
           }
         },
         {
@@ -1489,7 +1489,7 @@
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
             "floweringDate": "3/28",
-            "fullBloomDate": "4/3"
+            "fullBloomDate": "4/6"
           }
         },
         {
