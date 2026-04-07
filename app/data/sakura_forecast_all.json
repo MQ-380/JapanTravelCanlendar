@@ -1,6 +1,6 @@
 {
   "lastUpdated": {
-    "weatherMap": "2026-04-06",
+    "weatherMap": "2026-04-07",
     "weathernews": "2026-04-06",
     "japanMeteorologicalCorp": "2026-04-06",
     "tenki.jp": "2026-04-06"
@@ -216,7 +216,7 @@
           "source": "Weather Map",
           "url": "https://sakura.weathermap.jp/",
           "current": {
-            "floweringDate": "4/8",
+            "floweringDate": "4/7",
             "fullBloomDate": "4/12"
           }
         },
