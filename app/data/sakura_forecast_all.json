@@ -2,7 +2,7 @@
   "lastUpdated": {
     "weatherMap": "2026-04-09",
     "weathernews": "2026-04-12",
-    "japanMeteorologicalCorp": "2026-04-09",
+    "japanMeteorologicalCorp": "2026-04-12",
     "tenki.jp": "2026-04-11"
   },
   "cities": [
@@ -233,7 +233,7 @@
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
             "floweringDate": "4/7",
-            "fullBloomDate": "4/13"
+            "fullBloomDate": "4/12"
           }
         },
         {
