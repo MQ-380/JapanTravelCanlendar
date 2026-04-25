@@ -2,9 +2,9 @@
   "lastUpdated": "2026-04-25",
   "cities": [
     {
-      "id": "matsuyama",
-      "name": "Matsuyama",
-      "jpName": "松山",
+      "id": "nara",
+      "name": "Nara",
+      "jpName": "奈良",
       "region": "未知",
       "lives": [
         {
@@ -12,225 +12,43 @@
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
             "floweringDate": "3/24",
-            "comparedWithLastYear": "-1",
-            "comparedWithAllYears": "0"
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-4"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/4",
-            "comparedWithLastYear": "+5",
-            "comparedWithAllYears": "+1"
-          }
-        }
-      ]
-    },
-    {
-      "id": "sapporo",
-      "name": "Sapporo",
-      "jpName": "札幌",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "4/18",
-            "comparedWithLastYear": "-5",
-            "comparedWithAllYears": "-13"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/24",
-            "comparedWithLastYear": "-3",
-            "comparedWithAllYears": "-12"
-          }
-        }
-      ]
-    },
-    {
-      "id": "nagano",
-      "name": "Nagano",
-      "jpName": "長野",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/31",
-            "comparedWithLastYear": "-8",
-            "comparedWithAllYears": "-11"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/6",
-            "comparedWithLastYear": "-7",
-            "comparedWithAllYears": "-10"
-          }
-        }
-      ]
-    },
-    {
-      "id": "hiroshima",
-      "name": "Hiroshima",
-      "jpName": "広島",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/19",
-            "comparedWithLastYear": "-7",
-            "comparedWithAllYears": "-6"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "3/30",
-            "comparedWithLastYear": "-3",
+            "fullBloomDate": "3/31",
+            "comparedWithLastYear": "-4",
             "comparedWithAllYears": "-4"
           }
         }
       ]
     },
     {
-      "id": "hakodate",
-      "name": "Hakodate",
-      "jpName": "函館",
+      "id": "yokohama",
+      "name": "Yokohama",
+      "jpName": "横浜",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "4/18",
-            "comparedWithLastYear": "-5",
-            "comparedWithAllYears": "-10"
+            "floweringDate": "3/22",
+            "comparedWithLastYear": "-3",
+            "comparedWithAllYears": "-3"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/20",
-            "comparedWithLastYear": "-8",
-            "comparedWithAllYears": "-12"
-          }
-        }
-      ]
-    },
-    {
-      "id": "gifu",
-      "name": "Gifu",
-      "jpName": "岐阜",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/16",
-            "comparedWithLastYear": "-9",
-            "comparedWithAllYears": "-9"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "3/26",
-            "comparedWithLastYear": "-5",
-            "comparedWithAllYears": "-7"
-          }
-        }
-      ]
-    },
-    {
-      "id": "kagoshima",
-      "name": "Kagoshima",
-      "jpName": "鹿児島",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/27",
-            "comparedWithLastYear": "+3",
-            "comparedWithAllYears": "+1"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/5",
-            "comparedWithLastYear": "-2",
+            "fullBloomDate": "4/1",
+            "comparedWithLastYear": "-3",
             "comparedWithAllYears": "0"
-          }
-        }
-      ]
-    },
-    {
-      "id": "下関",
-      "name": "下関",
-      "jpName": "下関",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/24",
-            "comparedWithLastYear": "-2",
-            "comparedWithAllYears": "-2"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/6",
-            "comparedWithLastYear": "+2",
-            "comparedWithAllYears": "+2"
-          }
-        }
-      ]
-    },
-    {
-      "id": "miyazaki",
-      "name": "Miyazaki",
-      "jpName": "宮崎",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/24",
-            "comparedWithLastYear": "0",
-            "comparedWithAllYears": "+1"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/3",
-            "comparedWithLastYear": "+1",
-            "comparedWithAllYears": "+1"
           }
         }
       ]
@@ -262,6 +80,58 @@
       ]
     },
     {
+      "id": "shizuoka",
+      "name": "Shizuoka",
+      "jpName": "静岡",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/20",
+            "comparedWithLastYear": "-6",
+            "comparedWithAllYears": "-4"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/2",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hiroshima",
+      "name": "Hiroshima",
+      "jpName": "広島",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/19",
+            "comparedWithLastYear": "-7",
+            "comparedWithAllYears": "-6"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "3/30",
+            "comparedWithLastYear": "-3",
+            "comparedWithAllYears": "-4"
+          }
+        }
+      ]
+    },
+    {
       "id": "toyama",
       "name": "Toyama",
       "jpName": "富山",
@@ -283,6 +153,292 @@
             "fullBloomDate": "4/2",
             "comparedWithLastYear": "-4",
             "comparedWithAllYears": "-6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "大分",
+      "name": "大分",
+      "jpName": "大分",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "0"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/5",
+            "comparedWithLastYear": "+1",
+            "comparedWithAllYears": "+1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "銚子",
+      "name": "銚子",
+      "jpName": "銚子",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/25",
+            "comparedWithLastYear": "-2",
+            "comparedWithAllYears": "-5"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/3",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "徳島",
+      "name": "徳島",
+      "jpName": "徳島",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/28",
+            "comparedWithLastYear": "+2",
+            "comparedWithAllYears": "0"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/6",
+            "comparedWithLastYear": "0",
+            "comparedWithAllYears": "+2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fukui",
+      "name": "Fukui",
+      "jpName": "福井",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/29",
+            "comparedWithLastYear": "-6",
+            "comparedWithAllYears": "-3"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "3/31",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kanazawa",
+      "name": "Kanazawa",
+      "jpName": "金沢",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/29",
+            "comparedWithLastYear": "0",
+            "comparedWithAllYears": "-5"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/3",
+            "comparedWithLastYear": "-3",
+            "comparedWithAllYears": "-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hakodate",
+      "name": "Hakodate",
+      "jpName": "函館",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "4/18",
+            "comparedWithLastYear": "-5",
+            "comparedWithAllYears": "-10"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/20",
+            "comparedWithLastYear": "-8",
+            "comparedWithAllYears": "-12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "matsuyama",
+      "name": "Matsuyama",
+      "jpName": "松山",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "0"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/4",
+            "comparedWithLastYear": "+5",
+            "comparedWithAllYears": "+1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "jpName": "東京",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/19",
+            "comparedWithLastYear": "-5",
+            "comparedWithAllYears": "-5"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "3/28",
+            "comparedWithLastYear": "-2",
+            "comparedWithAllYears": "-3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kofu",
+      "name": "Kofu",
+      "jpName": "甲府",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/16",
+            "comparedWithLastYear": "-10",
+            "comparedWithAllYears": "-9"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "3/24",
+            "comparedWithLastYear": "-11",
+            "comparedWithAllYears": "-9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "鳥取",
+      "name": "鳥取",
+      "jpName": "鳥取",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/28",
+            "comparedWithLastYear": "+1",
+            "comparedWithAllYears": "-1"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "3/31",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "下関",
+      "name": "下関",
+      "jpName": "下関",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-2",
+            "comparedWithAllYears": "-2"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/6",
+            "comparedWithLastYear": "+2",
+            "comparedWithAllYears": "+2"
           }
         }
       ]
@@ -340,87 +496,9 @@
       ]
     },
     {
-      "id": "fukui",
-      "name": "Fukui",
-      "jpName": "福井",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/29",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-3"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "3/31",
-            "comparedWithLastYear": "-9",
-            "comparedWithAllYears": "-7"
-          }
-        }
-      ]
-    },
-    {
-      "id": "宇都宮",
-      "name": "宇都宮",
-      "jpName": "宇都宮",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/24",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-6"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/3",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-3"
-          }
-        }
-      ]
-    },
-    {
-      "id": "osaka",
-      "name": "Osaka",
-      "jpName": "大阪",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/26",
-            "comparedWithLastYear": "-1",
-            "comparedWithAllYears": "-1"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/3",
-            "comparedWithLastYear": "-1",
-            "comparedWithAllYears": "-1"
-          }
-        }
-      ]
-    },
-    {
-      "id": "銚子",
-      "name": "銚子",
-      "jpName": "銚子",
+      "id": "mito",
+      "name": "Mito",
+      "jpName": "水戸",
       "region": "未知",
       "lives": [
         {
@@ -437,34 +515,34 @@
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
             "fullBloomDate": "4/3",
-            "comparedWithLastYear": "-4",
+            "comparedWithLastYear": "-5",
             "comparedWithAllYears": "-3"
           }
         }
       ]
     },
     {
-      "id": "帯広",
-      "name": "帯広",
-      "jpName": "帯広",
+      "id": "nagano",
+      "name": "Nagano",
+      "jpName": "長野",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "4/18",
-            "comparedWithLastYear": "-10",
-            "comparedWithAllYears": "-14"
+            "floweringDate": "3/31",
+            "comparedWithLastYear": "-8",
+            "comparedWithAllYears": "-11"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/22",
-            "comparedWithLastYear": "-11",
-            "comparedWithAllYears": "-13"
+            "fullBloomDate": "4/6",
+            "comparedWithLastYear": "-7",
+            "comparedWithAllYears": "-10"
           }
         }
       ]
@@ -496,17 +574,17 @@
       ]
     },
     {
-      "id": "yamagata",
-      "name": "Yamagata",
-      "jpName": "山形",
+      "id": "morioka",
+      "name": "Morioka",
+      "jpName": "盛岡",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "4/2",
-            "comparedWithLastYear": "-7",
+            "floweringDate": "4/7",
+            "comparedWithLastYear": "-9",
             "comparedWithAllYears": "-11"
           }
         },
@@ -514,17 +592,43 @@
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/6",
-            "comparedWithLastYear": "-8",
+            "fullBloomDate": "4/12",
+            "comparedWithLastYear": "-7",
             "comparedWithAllYears": "-12"
           }
         }
       ]
     },
     {
-      "id": "sendai",
-      "name": "Sendai",
-      "jpName": "仙台",
+      "id": "wakayama",
+      "name": "Wakayama",
+      "jpName": "和歌山",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-2",
+            "comparedWithAllYears": "0"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/2",
+            "comparedWithLastYear": "+3",
+            "comparedWithAllYears": "-1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "niigata",
+      "name": "Niigata",
+      "jpName": "新潟",
       "region": "未知",
       "lives": [
         {
@@ -532,7 +636,7 @@
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
             "floweringDate": "3/31",
-            "comparedWithLastYear": "-4",
+            "comparedWithLastYear": "-6",
             "comparedWithAllYears": "-8"
           }
         },
@@ -540,104 +644,78 @@
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/4",
+            "fullBloomDate": "4/3",
             "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-9"
+            "comparedWithAllYears": "-10"
           }
         }
       ]
     },
     {
-      "id": "大分",
-      "name": "大分",
-      "jpName": "大分",
+      "id": "sapporo",
+      "name": "Sapporo",
+      "jpName": "札幌",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/24",
-            "comparedWithLastYear": "-1",
-            "comparedWithAllYears": "0"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/5",
-            "comparedWithLastYear": "+1",
-            "comparedWithAllYears": "+1"
-          }
-        }
-      ]
-    },
-    {
-      "id": "yokohama",
-      "name": "Yokohama",
-      "jpName": "横浜",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/22",
-            "comparedWithLastYear": "-3",
-            "comparedWithAllYears": "-3"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/1",
-            "comparedWithLastYear": "-3",
-            "comparedWithAllYears": "0"
-          }
-        }
-      ]
-    },
-    {
-      "id": "akita",
-      "name": "Akita",
-      "jpName": "秋田",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "4/6",
-            "comparedWithLastYear": "-9",
-            "comparedWithAllYears": "-11"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/9",
-            "comparedWithLastYear": "-9",
+            "floweringDate": "4/18",
+            "comparedWithLastYear": "-5",
             "comparedWithAllYears": "-13"
           }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/24",
+            "comparedWithLastYear": "-3",
+            "comparedWithAllYears": "-12"
+          }
         }
       ]
     },
     {
-      "id": "nagoya",
-      "name": "Nagoya",
-      "jpName": "名古屋",
+      "id": "osaka",
+      "name": "Osaka",
+      "jpName": "大阪",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/17",
-            "comparedWithLastYear": "-9",
-            "comparedWithAllYears": "-7"
+            "floweringDate": "3/26",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "-1"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/3",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "-1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kyoto",
+      "name": "Kyoto",
+      "jpName": "京都",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/23",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-3"
           }
         },
         {
@@ -645,34 +723,8 @@
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
             "fullBloomDate": "3/30",
-            "comparedWithLastYear": "-5",
-            "comparedWithAllYears": "-3"
-          }
-        }
-      ]
-    },
-    {
-      "id": "nara",
-      "name": "Nara",
-      "jpName": "奈良",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/24",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-4"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "3/31",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-4"
+            "comparedWithLastYear": "-6",
+            "comparedWithAllYears": "-5"
           }
         }
       ]
@@ -704,52 +756,95 @@
       ]
     },
     {
-      "id": "tokyo",
-      "name": "Tokyo",
-      "jpName": "東京",
+      "id": "sendai",
+      "name": "Sendai",
+      "jpName": "仙台",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/19",
-            "comparedWithLastYear": "-5",
-            "comparedWithAllYears": "-5"
+            "floweringDate": "3/31",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-8"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "3/28",
-            "comparedWithLastYear": "-2",
+            "fullBloomDate": "4/4",
+            "comparedWithLastYear": "-6",
+            "comparedWithAllYears": "-9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "asahikawa",
+      "name": "Asahikawa",
+      "jpName": "旭川",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "4/21",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-13"
+          }
+        }
+      ]
+    },
+    {
+      "id": "宇都宮",
+      "name": "宇都宮",
+      "jpName": "宇都宮",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-6"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/3",
+            "comparedWithLastYear": "-6",
             "comparedWithAllYears": "-3"
           }
         }
       ]
     },
     {
-      "id": "shizuoka",
-      "name": "Shizuoka",
-      "jpName": "静岡",
+      "id": "kagoshima",
+      "name": "Kagoshima",
+      "jpName": "鹿児島",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/20",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-4"
+            "floweringDate": "3/27",
+            "comparedWithLastYear": "+3",
+            "comparedWithAllYears": "+1"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/2",
-            "comparedWithLastYear": "-1",
+            "fullBloomDate": "4/5",
+            "comparedWithLastYear": "-2",
             "comparedWithAllYears": "0"
           }
         }
@@ -782,17 +877,17 @@
       ]
     },
     {
-      "id": "takamatsu",
-      "name": "Takamatsu",
-      "jpName": "高松",
+      "id": "松江",
+      "name": "松江",
+      "jpName": "松江",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/25",
-            "comparedWithLastYear": "-1",
+            "floweringDate": "3/27",
+            "comparedWithLastYear": "0",
             "comparedWithAllYears": "-2"
           }
         },
@@ -800,113 +895,9 @@
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/1",
-            "comparedWithLastYear": "-2",
-            "comparedWithAllYears": "-3"
-          }
-        }
-      ]
-    },
-    {
-      "id": "wakayama",
-      "name": "Wakayama",
-      "jpName": "和歌山",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/24",
-            "comparedWithLastYear": "-2",
-            "comparedWithAllYears": "0"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/2",
-            "comparedWithLastYear": "+3",
-            "comparedWithAllYears": "-1"
-          }
-        }
-      ]
-    },
-    {
-      "id": "佐賀",
-      "name": "佐賀",
-      "jpName": "佐賀",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/21",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-3"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/3",
-            "comparedWithLastYear": "+1",
-            "comparedWithAllYears": "+1"
-          }
-        }
-      ]
-    },
-    {
-      "id": "鳥取",
-      "name": "鳥取",
-      "jpName": "鳥取",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/28",
-            "comparedWithLastYear": "+1",
-            "comparedWithAllYears": "-1"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
             "fullBloomDate": "3/31",
-            "comparedWithLastYear": "-4",
+            "comparedWithLastYear": "-2",
             "comparedWithAllYears": "-5"
-          }
-        }
-      ]
-    },
-    {
-      "id": "aomori",
-      "name": "Aomori",
-      "jpName": "青森",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "4/13",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-9"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/16",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-10"
           }
         }
       ]
@@ -938,33 +929,42 @@
       ]
     },
     {
-      "id": "室蘭",
-      "name": "室蘭",
-      "jpName": "室蘭",
+      "id": "nagoya",
+      "name": "Nagoya",
+      "jpName": "名古屋",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "4/23",
-            "comparedWithLastYear": "-3",
-            "comparedWithAllYears": "-11"
+            "floweringDate": "3/17",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-7"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "3/30",
+            "comparedWithLastYear": "-5",
+            "comparedWithAllYears": "-3"
           }
         }
       ]
     },
     {
-      "id": "kyoto",
-      "name": "Kyoto",
-      "jpName": "京都",
+      "id": "佐賀",
+      "name": "佐賀",
+      "jpName": "佐賀",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/23",
+            "floweringDate": "3/21",
             "comparedWithLastYear": "-4",
             "comparedWithAllYears": "-3"
           }
@@ -973,35 +973,9 @@
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "3/30",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-5"
-          }
-        }
-      ]
-    },
-    {
-      "id": "kofu",
-      "name": "Kofu",
-      "jpName": "甲府",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/16",
-            "comparedWithLastYear": "-10",
-            "comparedWithAllYears": "-9"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "3/24",
-            "comparedWithLastYear": "-11",
-            "comparedWithAllYears": "-9"
+            "fullBloomDate": "4/3",
+            "comparedWithLastYear": "+1",
+            "comparedWithAllYears": "+1"
           }
         }
       ]
@@ -1033,35 +1007,35 @@
       ]
     },
     {
-      "id": "kanazawa",
-      "name": "Kanazawa",
-      "jpName": "金沢",
+      "id": "takamatsu",
+      "name": "Takamatsu",
+      "jpName": "高松",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/29",
-            "comparedWithLastYear": "0",
-            "comparedWithAllYears": "-5"
+            "floweringDate": "3/25",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "-2"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/3",
-            "comparedWithLastYear": "-3",
-            "comparedWithAllYears": "-5"
+            "fullBloomDate": "4/1",
+            "comparedWithLastYear": "-2",
+            "comparedWithAllYears": "-3"
           }
         }
       ]
     },
     {
-      "id": "tsu",
-      "name": "Tsu",
-      "jpName": "津",
+      "id": "miyazaki",
+      "name": "Miyazaki",
+      "jpName": "宮崎",
       "region": "未知",
       "lives": [
         {
@@ -1069,60 +1043,43 @@
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
             "floweringDate": "3/24",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-5"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "3/29",
-            "comparedWithLastYear": "-4",
-            "comparedWithAllYears": "-5"
-          }
-        }
-      ]
-    },
-    {
-      "id": "asahikawa",
-      "name": "Asahikawa",
-      "jpName": "旭川",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "4/21",
-            "comparedWithLastYear": "-9",
-            "comparedWithAllYears": "-13"
-          }
-        }
-      ]
-    },
-    {
-      "id": "kobe",
-      "name": "Kobe",
-      "jpName": "神戸",
-      "region": "未知",
-      "lives": [
-        {
-          "source": "気象庁_开花",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
-          "current": {
-            "floweringDate": "3/27",
             "comparedWithLastYear": "0",
-            "comparedWithAllYears": "0"
+            "comparedWithAllYears": "+1"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/5",
-            "comparedWithLastYear": "-1",
-            "comparedWithAllYears": "0"
+            "fullBloomDate": "4/3",
+            "comparedWithLastYear": "+1",
+            "comparedWithAllYears": "+1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "帯広",
+      "name": "帯広",
+      "jpName": "帯広",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "4/18",
+            "comparedWithLastYear": "-10",
+            "comparedWithAllYears": "-14"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/22",
+            "comparedWithLastYear": "-11",
+            "comparedWithAllYears": "-13"
           }
         }
       ]
@@ -1154,68 +1111,68 @@
       ]
     },
     {
-      "id": "松江",
-      "name": "松江",
-      "jpName": "松江",
+      "id": "tsu",
+      "name": "Tsu",
+      "jpName": "津",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/27",
-            "comparedWithLastYear": "0",
-            "comparedWithAllYears": "-2"
+            "floweringDate": "3/24",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-5"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "3/31",
-            "comparedWithLastYear": "-2",
+            "fullBloomDate": "3/29",
+            "comparedWithLastYear": "-4",
             "comparedWithAllYears": "-5"
           }
         }
       ]
     },
     {
-      "id": "徳島",
-      "name": "徳島",
-      "jpName": "徳島",
+      "id": "gifu",
+      "name": "Gifu",
+      "jpName": "岐阜",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/28",
-            "comparedWithLastYear": "+2",
-            "comparedWithAllYears": "0"
+            "floweringDate": "3/16",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-9"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/6",
-            "comparedWithLastYear": "0",
-            "comparedWithAllYears": "+2"
+            "fullBloomDate": "3/26",
+            "comparedWithLastYear": "-5",
+            "comparedWithAllYears": "-7"
           }
         }
       ]
     },
     {
-      "id": "morioka",
-      "name": "Morioka",
-      "jpName": "盛岡",
+      "id": "akita",
+      "name": "Akita",
+      "jpName": "秋田",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "4/7",
+            "floweringDate": "4/6",
             "comparedWithLastYear": "-9",
             "comparedWithAllYears": "-11"
           }
@@ -1224,61 +1181,104 @@
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/12",
-            "comparedWithLastYear": "-7",
-            "comparedWithAllYears": "-12"
+            "fullBloomDate": "4/9",
+            "comparedWithLastYear": "-9",
+            "comparedWithAllYears": "-13"
           }
         }
       ]
     },
     {
-      "id": "mito",
-      "name": "Mito",
-      "jpName": "水戸",
+      "id": "室蘭",
+      "name": "室蘭",
+      "jpName": "室蘭",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/25",
-            "comparedWithLastYear": "-2",
-            "comparedWithAllYears": "-5"
-          }
-        },
-        {
-          "source": "気象庁_满开",
-          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
-          "current": {
-            "fullBloomDate": "4/3",
-            "comparedWithLastYear": "-5",
-            "comparedWithAllYears": "-3"
+            "floweringDate": "4/23",
+            "comparedWithLastYear": "-3",
+            "comparedWithAllYears": "-11"
           }
         }
       ]
     },
     {
-      "id": "niigata",
-      "name": "Niigata",
-      "jpName": "新潟",
+      "id": "kobe",
+      "name": "Kobe",
+      "jpName": "神戸",
       "region": "未知",
       "lives": [
         {
           "source": "気象庁_开花",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
           "current": {
-            "floweringDate": "3/31",
-            "comparedWithLastYear": "-6",
-            "comparedWithAllYears": "-8"
+            "floweringDate": "3/27",
+            "comparedWithLastYear": "0",
+            "comparedWithAllYears": "0"
           }
         },
         {
           "source": "気象庁_满开",
           "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
           "current": {
-            "fullBloomDate": "4/3",
+            "fullBloomDate": "4/5",
+            "comparedWithLastYear": "-1",
+            "comparedWithAllYears": "0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "aomori",
+      "name": "Aomori",
+      "jpName": "青森",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "4/13",
+            "comparedWithLastYear": "-4",
+            "comparedWithAllYears": "-9"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/16",
             "comparedWithLastYear": "-6",
             "comparedWithAllYears": "-10"
+          }
+        }
+      ]
+    },
+    {
+      "id": "yamagata",
+      "name": "Yamagata",
+      "jpName": "山形",
+      "region": "未知",
+      "lives": [
+        {
+          "source": "気象庁_开花",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_kaika.html",
+          "current": {
+            "floweringDate": "4/2",
+            "comparedWithLastYear": "-7",
+            "comparedWithAllYears": "-11"
+          }
+        },
+        {
+          "source": "気象庁_满开",
+          "url": "https://www.data.jma.go.jp/sakura/data/sakura_mankai.html",
+          "current": {
+            "fullBloomDate": "4/6",
+            "comparedWithLastYear": "-8",
+            "comparedWithAllYears": "-12"
           }
         }
       ]
