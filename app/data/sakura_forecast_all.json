@@ -1,7 +1,7 @@
 {
   "lastUpdated": {
     "weatherMap": "2026-04-24",
-    "weathernews": "2026-10-17",
+    "weathernews": "2026-10-23",
     "japanMeteorologicalCorp": "2026-08-10",
     "tenki.jp": "2026-04-28"
   },
@@ -12,6 +12,14 @@
       "jpName": "札幌",
       "region": "北海道・東北",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/18",
+            "fullBloomDate": "5/1"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -29,6 +37,14 @@
       "region": "北海道・東北",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/18",
+            "fullBloomDate": "4/28"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -44,6 +60,14 @@
       "jpName": "室蘭",
       "region": "北海道・東北",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/23",
+            "fullBloomDate": "5/4"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -61,6 +85,14 @@
       "region": "北海道・東北",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/13",
+            "fullBloomDate": "4/22"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -76,6 +108,14 @@
       "jpName": "秋田",
       "region": "北海道・東北",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/6",
+            "fullBloomDate": "4/17"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -93,6 +133,14 @@
       "region": "北海道・東北",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/7",
+            "fullBloomDate": "4/18"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -108,6 +156,14 @@
       "jpName": "仙台",
       "region": "北海道・東北",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/31",
+            "fullBloomDate": "4/8"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -125,6 +181,14 @@
       "region": "北海道・東北",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "4/2",
+            "fullBloomDate": "4/13"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -140,6 +204,14 @@
       "jpName": "福島",
       "region": "北海道・東北",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/29",
+            "fullBloomDate": "4/7"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -157,6 +229,14 @@
       "region": "関東・甲信",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/25",
+            "fullBloomDate": "3/30"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -172,6 +252,14 @@
       "jpName": "宇都宮",
       "region": "関東・甲信",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/30"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -189,6 +277,14 @@
       "region": "関東・甲信",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/22",
+            "fullBloomDate": "3/29"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -204,6 +300,14 @@
       "jpName": "熊谷",
       "region": "関東・甲信",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/23",
+            "fullBloomDate": "3/27"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -221,6 +325,14 @@
       "region": "関東・甲信",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/19",
+            "fullBloomDate": "3/24"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -236,6 +348,14 @@
       "jpName": "銚子",
       "region": "関東・甲信",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/25",
+            "fullBloomDate": "3/30"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -253,6 +373,14 @@
       "region": "関東・甲信",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/22",
+            "fullBloomDate": "3/25"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -268,6 +396,14 @@
       "jpName": "長野",
       "region": "関東・甲信",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/31",
+            "fullBloomDate": "4/11"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -285,6 +421,14 @@
       "region": "関東・甲信",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/16",
+            "fullBloomDate": "3/25"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -300,6 +444,14 @@
       "jpName": "新潟",
       "region": "北陸・東海",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/31",
+            "fullBloomDate": "4/8"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -317,6 +469,14 @@
       "region": "北陸・東海",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/29",
+            "fullBloomDate": "4/3"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -332,6 +492,14 @@
       "jpName": "金沢",
       "region": "北陸・東海",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/29",
+            "fullBloomDate": "4/3"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -349,6 +517,14 @@
       "region": "北陸・東海",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/29",
+            "fullBloomDate": "4/1"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -364,6 +540,14 @@
       "jpName": "静岡",
       "region": "北陸・東海",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/20",
+            "fullBloomDate": "3/24"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -381,6 +565,14 @@
       "region": "北陸・東海",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/17",
+            "fullBloomDate": "3/24"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -396,6 +588,14 @@
       "jpName": "岐阜",
       "region": "北陸・東海",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/16",
+            "fullBloomDate": "3/25"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -413,6 +613,14 @@
       "region": "北陸・東海",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/29"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -428,6 +636,14 @@
       "jpName": "彦根",
       "region": "近畿",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/29",
+            "fullBloomDate": "4/1"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -445,6 +661,14 @@
       "region": "近畿",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/23",
+            "fullBloomDate": "3/26"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -460,6 +684,14 @@
       "jpName": "大阪",
       "region": "近畿",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/26",
+            "fullBloomDate": "3/27"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -477,6 +709,14 @@
       "region": "近畿",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/27",
+            "fullBloomDate": "3/27"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -492,6 +732,14 @@
       "jpName": "奈良",
       "region": "近畿",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/28"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -509,6 +757,14 @@
       "region": "近畿",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/24"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -524,6 +780,14 @@
       "jpName": "岡山",
       "region": "中国・四国",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/25",
+            "fullBloomDate": "3/28"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -541,6 +805,14 @@
       "region": "中国・四国",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/19",
+            "fullBloomDate": "3/25"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -556,6 +828,14 @@
       "jpName": "松江",
       "region": "中国・四国",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/27",
+            "fullBloomDate": "3/29"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -573,6 +853,14 @@
       "region": "中国・四国",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/28",
+            "fullBloomDate": "3/29"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -588,6 +876,14 @@
       "jpName": "徳島",
       "region": "中国・四国",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/28",
+            "fullBloomDate": "3/28"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -605,6 +901,14 @@
       "region": "中国・四国",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/25",
+            "fullBloomDate": "3/27"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -620,6 +924,14 @@
       "jpName": "松山",
       "region": "中国・四国",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/24"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -637,6 +949,14 @@
       "region": "中国・四国",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/16",
+            "fullBloomDate": "3/22"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -652,6 +972,14 @@
       "jpName": "福岡",
       "region": "九州・沖縄",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/22"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -669,6 +997,14 @@
       "region": "九州・沖縄",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/24"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -684,6 +1020,14 @@
       "jpName": "長崎",
       "region": "九州・沖縄",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/27",
+            "fullBloomDate": "3/23"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -701,6 +1045,14 @@
       "region": "九州・沖縄",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/21",
+            "fullBloomDate": "3/24"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -716,6 +1068,14 @@
       "jpName": "熊本",
       "region": "九州・沖縄",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/23",
+            "fullBloomDate": "3/22"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
@@ -733,6 +1093,14 @@
       "region": "九州・沖縄",
       "forecasts": [
         {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/24",
+            "fullBloomDate": "3/23"
+          }
+        },
+        {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
           "current": {
@@ -748,6 +1116,14 @@
       "jpName": "鹿児島",
       "region": "九州・沖縄",
       "forecasts": [
+        {
+          "source": "Weathernews",
+          "url": "https://weathernews.jp/sakura/news/kaikaforecast/",
+          "current": {
+            "floweringDate": "3/27",
+            "fullBloomDate": "3/26"
+          }
+        },
         {
           "source": "Japan Meteorological Corp",
           "url": "https://s.n-kishou.co.jp/w/sp/sakura/sakura_hw?f=cn_tn260305",
